@@ -4,7 +4,7 @@ import axios from 'axios'
 const app = new Hono()
 
 //* INTRODUCTION
-var welcomeMessage = "Welcome to github route!";
+var welcomeMessage = "Welcome to GitHub API route!";
 app.get("/", (c) => {
     return c.text(welcomeMessage)
 })

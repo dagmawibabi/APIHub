@@ -1,6 +1,6 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { env } from 'hono/adapter'
+require('dotenv').config()
 
 //* APP
 const app = new Hono()
@@ -12,9 +12,13 @@ app.get('/', (c) => {
 
 //* Routes 
 import github from "./routes/github"
+import weather from "./routes/weather"
+import hackerNews from "./routes/hackernews"
 
-// GitHub
-app.route('/github', github)
+//* END POINTS
+app.route('/github', github) // GitHub
+app.route('/weather', weather) // Weather
+app.route('/hackernews', hackerNews) // Hacker News
 
 //* ERROR HANDLING
 app.onError((err, c) => {
@@ -26,6 +30,7 @@ app.onError((err, c) => {
 var port = Number.parseInt(process.env.PORT!) || 7000;
 console.log(`Server is running on port ${port}`)
 
+//* SERVER
 serve({
   fetch: app.fetch,
   port
