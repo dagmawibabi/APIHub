@@ -1,5 +1,6 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import { env } from 'hono/adapter'
 
 //* APP
 const app = new Hono()
@@ -22,7 +23,7 @@ app.onError((err, c) => {
 })
 
 //* PORT
-const port = 7000
+var port = Number.parseInt(process.env.PORT!) || 7000;
 console.log(`Server is running on port ${port}`)
 
 serve({
