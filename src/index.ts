@@ -14,11 +14,14 @@ app.get('/', (c) => {
 import github from "./routes/github"
 import weather from "./routes/weather"
 import hackerNews from "./routes/hackernews"
+import crypto from "./routes/crypto"
 
 //* END POINTS
 app.route('/github', github) // GitHub
 app.route('/weather', weather) // Weather
 app.route('/hackernews', hackerNews) // Hacker News
+app.route('/crypto', crypto) // Crypto
+
 
 //* ERROR HANDLING
 app.onError((err, c) => {
