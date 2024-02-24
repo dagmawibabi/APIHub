@@ -15,17 +15,17 @@ app.get("/forecast", (c) => {
     return c.json(response);
 })
 app.get("/forecast/:location/:numberOfDays", async (c) => {
+    var weatherAPI = process.env.WEATHERAPIKEY
     var location = c.req.param("location")
     var numberOfDays = c.req.param("numberOfDays")
-    var weatherAPI = process.env.WEATHERAPI
     var result = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${weatherAPI}&q=${location}&days=${numberOfDays}&aqi=yes&alerts=no`)
     var forecast = result.data
     return c.json(forecast)
 })
 app.get("/forecast/:latitude/:longitude", async (c) => {
+    var weatherAPI = process.env.WEATHERAPIKEY
     var latitude = c.req.param("latitude")
     var longitude = c.req.param("longitude")
-    var weatherAPI = process.env.WEATHERAPI
     var result = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${weatherAPI}&q=${latitude},${longitude}&aqi=yes`)
     var forecast = result.data
     return c.json(forecast)
@@ -37,8 +37,8 @@ app.get("/search", (c) => {
     return c.json(response);
 })
 app.get("/search/:location", async (c) => {
+    var weatherAPI = process.env.WEATHERAPIKEY;
     var location = c.req.param("location")
-    var weatherAPI = process.env.WEATHERAPI;
     var result = await axios.get(`https://api.weatherapi.com/v1/search.json?key=${weatherAPI}&q=${location}`)
     var searchResult = result.data
     return c.json(searchResult)

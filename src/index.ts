@@ -15,12 +15,14 @@ import github from "./routes/github"
 import weather from "./routes/weather"
 import hackerNews from "./routes/hackernews"
 import crypto from "./routes/crypto"
+import apotd from "./routes/apotd"
 
 //* END POINTS
 app.route('/github', github) // GitHub
 app.route('/weather', weather) // Weather
 app.route('/hackernews', hackerNews) // Hacker News
 app.route('/crypto', crypto) // Crypto
+app.route('/apotd', apotd) // APOTD
 
 
 //* ERROR HANDLING

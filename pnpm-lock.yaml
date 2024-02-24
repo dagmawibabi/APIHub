@@ -17,6 +17,9 @@ dependencies:
   hono:
     specifier: ^4.0.5
     version: 4.0.5
+  moment:
+    specifier: ^2.30.1
+    version: 2.30.1
 
 devDependencies:
   '@types/node':
@@ -350,6 +353,10 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.52.0
+    dev: false
+
+  /moment@2.30.1:
+    resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
     dev: false
 
   /proxy-from-env@1.1.0:
