@@ -16,6 +16,7 @@ import weather from "./routes/weather"
 import hackerNews from "./routes/hackernews"
 import crypto from "./routes/crypto"
 import apotd from "./routes/apotd"
+import mealDb from "./routes/mealdb"
 
 //* END POINTS
 app.route('/github', github) // GitHub
@@ -23,7 +24,7 @@ app.route('/weather', weather) // Weather
 app.route('/hackernews', hackerNews) // Hacker News
 app.route('/crypto', crypto) // Crypto
 app.route('/apotd', apotd) // APOTD
-
+app.route('/mealdb', mealDb)
 
 //* ERROR HANDLING
 app.onError((err, c) => {
