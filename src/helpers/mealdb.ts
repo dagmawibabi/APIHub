@@ -2,7 +2,6 @@ interface Meal {
     [key: string]: string | null;
 }
 
-
 interface MealDetails {
     name: string;
     ingredients: { ingredient: string, measure: string }[];

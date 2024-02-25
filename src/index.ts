@@ -5,12 +5,12 @@ require('dotenv').config()
 //* APP
 const app = new Hono()
 
-//* Introduction
+//* INTRODUCTION
 app.get('/', (c) => {
   return c.text('Welcome to Free APIs!')
 })
 
-//* Routes 
+//* ROUTES 
 import github from "./routes/github"
 import weather from "./routes/weather"
 import hackerNews from "./routes/hackernews"
@@ -18,13 +18,13 @@ import crypto from "./routes/crypto"
 import apotd from "./routes/apotd"
 import mealDb from "./routes/mealdb"
 
-//* END POINTS
+//* ENDPOINTS
 app.route('/github', github) // GitHub
 app.route('/weather', weather) // Weather
 app.route('/hackernews', hackerNews) // Hacker News
 app.route('/crypto', crypto) // Crypto
 app.route('/apotd', apotd) // APOTD
-app.route('/mealdb', mealDb)
+app.route('/mealdb', mealDb) // MealDB
 
 //* ERROR HANDLING
 app.onError((err, c) => {
