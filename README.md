@@ -4,7 +4,7 @@ So I use a lot of free and open API's all the time for random apps, experiments 
 
 So I decided to make APIHub, a parent API to all other APIs. I don't have to relearn end-points, dig through their documentations, convert responses to JSON and go through the hassle anymore. I only have to learn this one API and that's it! 🥳
 
-## Currently integrated APIs
+## Currently Integrated APIs
 
 * 🐙 [GitHub](https://api.github.com/) 
 * 🌨  [WeatherAPI](https://api.weatherapi.com/)
@@ -20,5 +20,25 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 
 ## Contribution 
 The project uses [HonoJS](https://hono.dev/) and [TypeScript](https://www.typescriptlang.org/) which makes your DX so nice. And the entire codebase has been commented and a documentation is being generated. So if you'd like to expand this hub and basically make the lives of so many devs easy, help by contributing. 
+
+You can help support the project in three ways. ✨
+1. **By Contributing** 
+    * Fork this repo
+    * Create a new .ts file in routes folder
+    * Import the file in index.ts 
+    * Implement basic routes for the endpoints 
+    * Add functions that ease life
+    * Comment well
+    * Open a PR
+1. **By Starring the Repo** 
+1. **By Sharing this Project to Your Friends and Community**
+
+<div>
+
+![Step1](media/a.jpg)
+![Step1](media/b.jpg)
+![Step1](media/c.jpg)
+
+</div>
 
 # Drop a star while you're at it ✨
