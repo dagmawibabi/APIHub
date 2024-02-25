@@ -4,6 +4,11 @@ So I use a lot of free and open API's all the time for random apps, experiments 
 
 So I decided to make APIHub, a parent API to all other APIs. I don't have to relearn end-points, dig through their documentations, convert responses to JSON and go through the hassle anymore. I only have to learn this one API and that's it! 🥳
 
+## Best Features
+* Not only does it handle basic requests but it also handles nested requests automatically. So your frontend only has to request once, whole the API handles all nested requests and responds with a complete response 
+* It extends query parameters. It goes further than the basic API usage provided; it handles calculations, date conversions, response limits, data filters, date ranges and so much more. 
+* All responses are JSON and It's got a predictable error response and handling.
+
 ## Currently Integrated APIs
 
 * 🐙 [GitHub](https://api.github.com/) 
@@ -13,10 +18,11 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 * 👩‍🚀 [APOTD](https://api.nasa.gov/) 
 * 🥙 [MealDB](https://themealdb.com)
 
-## Best Features
-* Not only does it handle basic requests but it also handles nested requests automatically. So your frontend only has to request once, whole the API handles all nested requests and responds with a complete response 
-* It extends query parameters. It goes further than the basic API usage provided; it handles calculations, date conversions, response limits, data filters, date ranges and so much more. 
-* All responses are JSON and It's got a predictable error response and handling.
+## APIs To Be Integrated Soon 
+* 📰 [NewsAPI](https://newsapi.org)
+* 👽 [RedditAPI](https://www.reddit.com)
+* 🎬 [TheMovieDB](https://api.themoviedb.org)
+* 📚 [Google Books](https://www.googleapis.com)
 
 ## Contribution 
 The project uses [HonoJS](https://hono.dev/) and [TypeScript](https://www.typescriptlang.org/) which makes your DX so nice. And the entire codebase has been commented and a documentation is being generated. So if you'd like to expand this hub and basically make the lives of so many devs easy, help by contributing. 
@@ -32,5 +38,7 @@ You can help support the project in three ways. ✨
     * Open a PR
 1. **By Starring the Repo** 
 1. **By Sharing this Project to Your Friends and Community**
+
+You can use this [Public APIs Repository](https://github.com/public-apis/public-apis) for inpiration and APIs to implement.
 
 # Drop a star while you're at it ✨
