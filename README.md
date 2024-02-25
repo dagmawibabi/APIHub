@@ -33,12 +33,4 @@ You can help support the project in three ways. ✨
 1. **By Starring the Repo** 
 1. **By Sharing this Project to Your Friends and Community**
 
-<div>
-
-![Step1](media/a.jpg)
-![Step1](media/b.jpg)
-![Step1](media/c.jpg)
-
-</div>
-
 # Drop a star while you're at it ✨
