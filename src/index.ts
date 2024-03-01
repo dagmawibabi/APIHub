@@ -16,7 +16,10 @@ import weather from "./routes/weather"
 import hackerNews from "./routes/hackernews"
 import crypto from "./routes/crypto"
 import apotd from "./routes/apotd"
-import mealDb from "./routes/mealdb"
+import mealDB from "./routes/mealdb"
+import googleBooks from "./routes/googlebooks"
+import reddit from "./routes/reddit"
+import news from "./routes/news"
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -24,7 +27,11 @@ app.route('/weather', weather) // Weather
 app.route('/hackernews', hackerNews) // Hacker News
 app.route('/crypto', crypto) // Crypto
 app.route('/apotd', apotd) // APOTD
-app.route('/mealdb', mealDb) // MealDB
+app.route('/mealdb', mealDB) // MealDB
+app.route('/googlebooks', googleBooks) // Google Books
+app.route('/reddit', reddit) // Reddit
+app.route('/news', news) // NewsAPI
+
 
 //* ERROR HANDLING
 app.onError((err, c) => {

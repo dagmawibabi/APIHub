@@ -17,12 +17,12 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 * 💰 [CoinGecko](https://api.coingecko.com/)
 * 👩‍🚀 [APOTD](https://api.nasa.gov/) 
 * 🥙 [MealDB](https://themealdb.com)
+* 📚 [Google Books](https://www.googleapis.com)
+* 👽 [RedditAPI](https://www.reddit.com)
+* 📰 [NewsAPI](https://newsapi.org)
 
 ## APIs To Be Integrated Soon 
-* 📰 [NewsAPI](https://newsapi.org)
-* 👽 [RedditAPI](https://www.reddit.com)
 * 🎬 [TheMovieDB](https://api.themoviedb.org)
-* 📚 [Google Books](https://www.googleapis.com)
 
 ## Contribution 
 The project uses [HonoJS](https://hono.dev/) and [TypeScript](https://www.typescriptlang.org/) which makes your DX so nice. And the entire codebase has been commented and a documentation is being generated. So if you'd like to expand this hub and basically make the lives of so many devs easy, help by contributing. 
