@@ -14,7 +14,7 @@ app.get("/movies", (c) => {
     return c.text('/movies/:page - discover movies, /movies/trending - trending movies , /movies/top-rated - top-rated movies')
 })
 
-// Discover movies
+//* DISCOVER MOVIES
 app.get("/movies/discover/:page", async (c)=>{
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page")
@@ -22,7 +22,7 @@ app.get("/movies/discover/:page", async (c)=>{
     return c.json(result.data)    
 })
 
-// Search movie
+//* SEARCH MOVIES
 app.get("/movies/search/:title/:year?/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var title = c.req.param("title")
@@ -32,7 +32,7 @@ app.get("/movies/search/:title/:year?/:page?", async (c) => {
     return c.json(result.data)
 })
 
-// Movie details 
+//* MOVIE DETAILS
 app.get("/movies/details/:movie_id", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var movie_id = c.req.param("movie_id")
@@ -40,7 +40,7 @@ app.get("/movies/details/:movie_id", async (c) => {
     return c.json(result.data)
 })
 
-// Trending movies
+//* TRENDING MOVIES
 app.get("/movies/trending/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
@@ -48,7 +48,7 @@ app.get("/movies/trending/:page?", async (c) => {
     return c.json(result.data)
 })
 
-// Top rated movies
+//* TOP RATED MOVIES
 app.get("/movies/top-rated/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
@@ -61,7 +61,7 @@ app.get("/tv", (c) => {
     return c.text('/tv/:id - tv details, /tv/:page - discover tv shows, /tv/trending - trending tv shows , /tv/top-rated - top-rated tv shows')
 })
 
-// Discover TV
+//* DISCOVER TV
 app.get("/tv/discover/:page?", async(c)=>{
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
@@ -69,7 +69,7 @@ app.get("/tv/discover/:page?", async(c)=>{
     return c.json(result.data)   
 })
 
-// Search tv
+//* SEARCH TV
 app.get("/tv/search/:title/:year?/:page", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var title = c.req.param("title")
@@ -79,7 +79,7 @@ app.get("/tv/search/:title/:year?/:page", async (c) => {
     return c.json(result.data)
 })
 
-// TV detail 
+//* TV DETAIL 
 app.get("/tv/details/:id", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var id = c.req.param("id")
@@ -87,7 +87,7 @@ app.get("/tv/details/:id", async (c) => {
     return c.json(result.data)
 })
 
-// TV season detail
+//* TV SEASON DETAIL
 app.get("/tv/details/:id/season/:season_number", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var series_id = c.req.param("id")
@@ -96,7 +96,7 @@ app.get("/tv/details/:id/season/:season_number", async (c) => {
     return c.json(result.data)
 })
 
-// Episode detail
+//* EPISODE DETAIL
 app.get("/tv/details/:id/season/:season_number/episode/:episode_number?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var series_id = c.req.param("id")
@@ -106,7 +106,7 @@ app.get("/tv/details/:id/season/:season_number/episode/:episode_number?", async 
     return c.json(result.data)
 })
 
-// Trending TV
+//* TRENDING TV
 app.get("/tv/trending/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
@@ -114,12 +114,14 @@ app.get("/tv/trending/:page?", async (c) => {
     return c.json(result.data)
 })
 
-// Top-rated TV
+//* TOP-RATED TV
 app.get("/tv/top-rated/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${MovieDBApiKey}&page=${page}`)
     return c.json(result.data)
 })
+
+//* FUTURE: ADD HELPER FUNCTIONS TO EASE GETTING ID AND MORE DETAILS
 
 export default app;
