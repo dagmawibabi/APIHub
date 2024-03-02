@@ -20,7 +20,7 @@ import mealDB from "./routes/mealdb"
 import googleBooks from "./routes/googlebooks"
 import reddit from "./routes/reddit"
 import news from "./routes/news"
-import movies from "./routes/movies"
+import movieDB from "./routes/moviedb"
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -32,7 +32,7 @@ app.route('/mealdb', mealDB) // MealDB
 app.route('/googlebooks', googleBooks) // Google Books
 app.route('/reddit', reddit) // Reddit
 app.route('/news', news) // NewsAPI
-app.route('/moviedb', movies) // TheMovieDB
+app.route('/moviedb', movieDB) // TheMovieDB
 
 
 //* ERROR HANDLING

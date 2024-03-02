@@ -23,11 +23,11 @@ app.get("/movies/discover/:page", async (c)=>{
 })
 
 // Search movie
-app.get("/movies/search/:title/:year?/:page", async (c) => {
+app.get("/movies/search/:title/:year?/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var title = c.req.param("title")
     var year = c.req.param("year") || ""
-    var page = c.req.param("page")
+    var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${title}&primary_release_year=${year}&page=${page}&api_key=${MovieDBApiKey}`)
     return c.json(result.data)
 })
@@ -41,7 +41,7 @@ app.get("/movies/details/:movie_id", async (c) => {
 })
 
 // Trending movies
-app.get("/movies/trending/:page", async (c) => {
+app.get("/movies/trending/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${MovieDBApiKey}&page=${page}`)
@@ -49,7 +49,7 @@ app.get("/movies/trending/:page", async (c) => {
 })
 
 // Top rated movies
-app.get("/movies/top-rated/:page", async (c) => {
+app.get("/movies/top-rated/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${MovieDBApiKey}&page=${page}`)
@@ -62,7 +62,7 @@ app.get("/tv", (c) => {
 })
 
 // Discover TV
-app.get("/tv/discover/:page", async(c)=>{
+app.get("/tv/discover/:page?", async(c)=>{
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${MovieDBApiKey}&page=${page}&include_video=false&sort_by=popularity.desc`)
@@ -97,7 +97,7 @@ app.get("/tv/details/:id/season/:season_number", async (c) => {
 })
 
 // Episode detail
-app.get("/tv/details/:id/season/:season_number/episode/:episode_number", async (c) => {
+app.get("/tv/details/:id/season/:season_number/episode/:episode_number?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var series_id = c.req.param("id")
     var season_number = c.req.param("season_number")
@@ -107,7 +107,7 @@ app.get("/tv/details/:id/season/:season_number/episode/:episode_number", async (
 })
 
 // Trending TV
-app.get("/tv/trending/:page", async (c) => {
+app.get("/tv/trending/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/trending/tv/day?api_key=${MovieDBApiKey}&page=${page}`)
@@ -115,7 +115,7 @@ app.get("/tv/trending/:page", async (c) => {
 })
 
 // Top-rated TV
-app.get("/tv/top-rated/:page", async (c) => {
+app.get("/tv/top-rated/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${MovieDBApiKey}&page=${page}`)
