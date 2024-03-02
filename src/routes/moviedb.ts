@@ -70,11 +70,11 @@ app.get("/tv/discover/:page?", async(c)=>{
 })
 
 //* SEARCH TV
-app.get("/tv/search/:title/:year?/:page", async (c) => {
+app.get("/tv/search/:title/:year?/:page?", async (c) => {
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
     var title = c.req.param("title")
     var year = c.req.param("year") || ""
-    var page = c.req.param("page")
+    var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${title}&year=${year}&page=${page}&api_key=${MovieDBApiKey}`)
     return c.json(result.data)
 })
