@@ -21,6 +21,7 @@ import googleBooks from "./routes/googlebooks"
 import reddit from "./routes/reddit"
 import news from "./routes/news"
 import movieDB from "./routes/moviedb"
+import flixquest from "./routes/flixquest";
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -33,6 +34,7 @@ app.route('/googlebooks', googleBooks) // Google Books
 app.route('/reddit', reddit) // Reddit
 app.route('/news', news) // NewsAPI
 app.route('/moviedb', movieDB) // TheMovieDB
+app.route('/flixquest', flixquest) // FlixQuest
 
 
 //* ERROR HANDLING
