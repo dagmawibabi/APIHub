@@ -23,6 +23,7 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 * 🎬 [TheMovieDB](https://api.themoviedb.org)
 * 🍿 [FlixQuest](https://flixquest-api.vercel.app)
 * 🎶 [Lyrics](https://api.lyrics.ovh)
+* 👤 [JSON Placeholder](https://jsonplaceholder.typicode.com)
 
 ## APIs To Be Integrated Soon 
 * Your Favorite API

@@ -23,6 +23,7 @@ import news from "./routes/news"
 import movieDB from "./routes/moviedb"
 import flixquest from "./routes/flixquest";
 import lyrics from "./routes/lyrics";
+import jsonplaceholder from "./routes/jsonplaceholder";
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -37,6 +38,8 @@ app.route('/news', news) // NewsAPI
 app.route('/moviedb', movieDB) // TheMovieDB
 app.route('/flixquest', flixquest) // FlixQuest
 app.route('/lyrics', lyrics) // Lyrics
+app.route('/jsonplaceholder', jsonplaceholder) // JSON Placeholder
+
 
 
 //* ERROR HANDLING
