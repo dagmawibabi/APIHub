@@ -12,30 +12,30 @@ app.get("/", (c) => {
 
 //* MOVIES
 app.get("/movie", (c) => {
-    return c.text('/movie/:tmdbId/:provider - get streaming links for a movie, provider should be either `showbox` or `vidsrcto`');
+    return c.text('/movie/:tmdbID/:provider - get streaming links for a movie, provider should be either `showbox` or `vidsrcto`');
 })
 
 //* GET STREAMING LINKS FOR MOVIE
-app.get("/movie/:tmdbId/:provider", async (c)=>{
-    var provider = c.req.param("provider");
-    var tmdbId = c.req.param("tmdbId");
-    var result = await axios.get(`${flixquestBaseUrl}/${provider}/watch-movie?tmdbId=${tmdbId}&proxied=false`);
+app.get("/movie/:tmdbID/:provider?", async (c)=>{
+    var provider = c.req.param("provider") || "showbox"; // [showbox, vidsrcto]
+    var tmdbID = c.req.param("tmdbID");
+    var result = await axios.get(`${flixquestBaseUrl}/${provider}/watch-movie?tmdbId=${tmdbID}&proxied=false`);
     return c.json(result.data)    
 })
 
 
 //* TV SERIES
 app.get("/tv", (c) => {
-    return c.text('/tv/:tmdbId/:season/:episode/:provider - get streaming links for an episode, provider should be either `showbox` or `vidsrcto`')
+    return c.text('/tv/:tmdbID/:season/:episode/:provider - get streaming links for an episode, provider should be either `showbox` or `vidsrcto`')
 })
 
 //* GET STREAMING LINKS FOR AN EPISODE
-app.get("/tv/:tmdbId/:season/:episode/:provider", async(c)=>{
-    var tmdbId = c.req.param("tmdbId");
+app.get("/tv/:tmdbID/:season/:episode/:provider?", async(c)=>{
+    var tmdbID = c.req.param("tmdbID");
     var season = c.req.param("season");
     var episode = c.req.param("episode");
-    var provider = c.req.param("provider");
-    var result = await axios.get(`${flixquestBaseUrl}/${provider}/watch-tv?tmdbId=${tmdbId}&season=${season}&episode=${episode}&proxied=false`);
+    var provider = c.req.param("provider") || "showbox"; // [showbox, vidsrcto]
+    var result = await axios.get(`${flixquestBaseUrl}/${provider}/watch-tv?tmdbId=${tmdbID}&season=${season}&episode=${episode}&proxied=false`);
     return c.json(result.data)   
 })
 

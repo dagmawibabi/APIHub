@@ -15,9 +15,9 @@ app.get("/movies", (c) => {
 })
 
 //* DISCOVER MOVIES
-app.get("/movies/discover/:page", async (c)=>{
+app.get("/movies/discover/:page?", async (c)=>{
     var MovieDBApiKey = process.env.MOVIEDBAPIKEY
-    var page = c.req.param("page")
+    var page = c.req.param("page") || 1
     var result = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${MovieDBApiKey}&page=${page}&include_video=false&sort_by=popularity.desc`)
     return c.json(result.data)    
 })

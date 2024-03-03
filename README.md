@@ -21,6 +21,7 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 * 👽 [RedditAPI](https://www.reddit.com)
 * 📰 [NewsAPI](https://newsapi.org)
 * 🎬 [TheMovieDB](https://api.themoviedb.org)
+* 🍿 [FlixQuest](https://flixquest-api.vercel.app)
 
 ## APIs To Be Integrated Soon 
 * Your Favorite API
