@@ -25,6 +25,9 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 ## APIs To Be Integrated Soon 
 * Your Favorite API
 
+## [Documentation](https://apihub-seven.vercel.app/)
+* We have a very detailed and extensive documentation that helps you navigate the entire project.
+
 ## Contribution 
 The project uses [HonoJS](https://hono.dev/) and [TypeScript](https://www.typescriptlang.org/) which makes your DX so nice. And the entire codebase has been commented and a documentation is being generated. So if you'd like to expand this hub and basically make the lives of so many devs easy, help by contributing. 
 
