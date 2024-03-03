@@ -1,0 +1,105 @@
+
+## 💻 Hacker News
+
+All routes for Hacker News start with  `/hackernews`
+
+
+---
+
+## New Stories
+
+Retrieves the latest news stories from Hacker News.
+
+- **URL**: `/newstories`
+- **Method**: GET
+- **Response**: Returns a JSON object with the latest news stories from Hacker News.
+``` json 
+[
+    {
+        "by": "benbreen",
+        "descendants": 0,
+        "id": 39572655,
+        "score": 1,
+        "time": 1709388742,
+        "title": "Bookish Diversions: Do Audiobooks Count?",
+        "type": "story",
+        "url": "https://www.millersbookreview.com/p/bookish-diversions-do-audiobooks-count"
+    },
+    {
+        "by": "thelastgallon",
+        "descendants": 0,
+        "id": 39572652,
+        "score": 1,
+        "time": 1709388709,
+        "title": "150M gallons of Toxic Wastewater spilled across one State: Nothing Grows",
+        "type": "story",
+        "url": "https://www.thecooldown.com/green-tech/toxic-oil-gas-wastewater-spills-texas/"
+    },
+]
+
+```
+---
+
+## Top Stories
+
+Retrieves the top stories from Hacker News.
+
+- **URL**: `/topstories`
+- **Method**: GET
+- **Response**: Returns a JSON object with the top stories from Hacker News.
+``` json
+[
+    {
+        "by": "madmax108",
+        "descendants": 135,
+        "id": 39570692,
+        "kids": [
+            39572598,
+            39570872,
+            39571636,
+            39572256,
+            39571142,
+         ...
+     
+        ],
+        "score": 337,
+        "time": 1709364669,
+        "title": "Ente: Open-Source, E2E Encrypted, Google Photos Alternative",
+        "type": "story",
+        "url": "https://ente.io/"
+    },
+    ...
+]
+
+```
+---
+
+## Best Stories
+
+Retrieves the best stories from Hacker News.
+
+- **URL**: `/beststories`
+- **Method**: GET
+- **Response**: Returns a JSON object with the best stories from Hacker News.
+
+``` json 
+[
+    {
+        "by": "modeless",
+        "descendants": 1087,
+        "id": 39559966,
+        "kids": [
+            39564662,
+            39566511,
+            39565109,
+            39569111,
+            39564917,
+          ...
+        ],
+        "score": 1358,
+        "time": 1709283365,
+        "title": "Elon Musk sues Sam Altman, Greg Brockman, and OpenAI [pdf]",
+        "type": "story",
+        "url": "https://www.courthousenews.com/wp-content/uploads/2024/02/musk-v-altman-openai-complaint-sf.pdf"
+    },
+]

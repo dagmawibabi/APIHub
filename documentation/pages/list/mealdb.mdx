@@ -1,0 +1,120 @@
+
+## 🥙 Meal DB
+
+
+All routes for Meal DB start with  `/mealdb`
+
+---
+
+## Search Query
+
+Searches for meals based on the provided search query.
+
+- **URL**: `/search/:searchQuery`
+- **Method**: GET
+- **URL Parameters**:
+  - `searchQuery` (required): The search query for meals.
+- **Response**: Returns a JSON object with an array of meals that match the search query.
+``` json 
+[
+    {
+        "name": "Pancakes",
+        "ingredients": [
+            {
+                "ingredient": "Flour",
+                "measure": "100g "
+            },
+            {
+                "ingredient": "Eggs",
+                "measure": "2 large"
+            },
+        ...
+        ],
+        "youtubeLink": "https://www.youtube.com/watch?v=LWuuCndtJr0",
+        "thumbnail": "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg",
+        "tags": [
+            "Breakfast",
+            "Desert",
+            "Sweet",
+            "Fruity"
+        ],
+        "area": "American",
+        "category": "Dessert",
+        "id": "52854"
+    },
+]
+
+```
+---
+
+## Meal by ID
+
+Retrieves a single meal based on the provided meal ID.
+
+- **URL**: `/meal/:mealId`
+- **Method**: GET
+- **URL Parameters**:
+  - `mealId` (required): The ID of the meal.
+- **Response**: Returns a JSON object with the details of the meal.
+``` json 
+
+{
+    "name": "Carrot Cake",
+    "ingredients": [
+        {
+            "ingredient": "Sugar",
+            "measure": "550ml"
+        },
+        {
+            "ingredient": "Eggs",
+            "measure": "5"
+        },
+       ...
+    ],
+    "youtubeLink": "https://www.youtube.com/watch?v=asjZ7iTrGKA",
+    "thumbnail": "https://www.themealdb.com/images/media/meals/vrspxv1511722107.jpg",
+    "tags": [
+        "Cake",
+        "Treat",
+        "Sweet"
+    ],
+    "area": "British",
+    "category": "Dessert",
+    "id": "52897"
+}
+
+```
+---
+
+## Meals by Category
+
+Retrieves a list of meals based on the provided category.
+
+- **URL**: `/category/:category`
+- **Method**: GET
+- **URL Parameters**:
+  - `category` (required): The category of meals.
+- **Response**: Returns a JSON object with an array of meals that belong to the specified category.
+``` json 
+
+[
+    {
+        "name": "Blini Pancakes",
+        "youtubeLink": "",
+        "thumbnail": "https://www.themealdb.com/images/media/meals/0206h11699013358.jpg",
+        "area": "",
+        "category": "",
+        "id": "53080"
+    },
+    {
+        "name": "Boulangère Potatoes",
+        "youtubeLink": "",
+        "thumbnail": "https://www.themealdb.com/images/media/meals/qywups1511796761.jpg",
+        "area": "",
+        "category": "",
+        "id": "52914"
+    },
+    ...
+]
+
+```

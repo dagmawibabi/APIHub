@@ -1,0 +1,426 @@
+
+## 🍿 Moview DB
+
+All routes for Movie DB start with  `/moviedb`
+
+
+### Discover Movies
+
+Discover movies.
+
+- **URL**: `/movies/discover/:page`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (required): The page number.
+- **Response**: Returns a JSON object with an array property `results`.
+``` json 
+{
+    "page": 2,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/xi2pblvQtCnh26SeOYzx1YX3DLT.jpg",
+            "genre_ids": [
+                80,
+                28,
+                53
+            ],
+            "id": 1227816,
+            "original_language": "en",
+            "original_title": "Red Right Hand",
+            "overview": "Cash is trying to live a quiet, honest life in a small Appalachian town. When a vicious crime boss forces him back into her services, he soon learns he's capable of anything -- even killing -- to protect his family and his home.",
+            "popularity": 415.604,
+            "poster_path": "/vfEG79SQIg3p6B8rBLVeIo2BBhb.jpg",
+            "release_date": "2024-02-22",
+            "title": "Red Right Hand",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 17
+        },
+        ...
+    ]
+    ...
+}
+```
+
+### Find Trending Movies
+
+Fetch currently trending movies.
+
+- **URL**: `/movies/trending/:page`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (required): The page number.
+- **Response**: Returns a JSON object with an array of trending movies ( just the same as `discover` ) .
+
+
+## Search Movie
+Searchs for movies based on the provided search query.
+
+- **URL**: `/movies/search/:title/:year?/:page?`
+- **Method**: GET
+- **URL Parameters**:
+  - `title` (required): The title of the movie.
+  - `year` (optional): The year the movie was released.
+  - `page` (optional): The page number
+- **Response**: Returns a JSON object with an array of movies in a results property.
+
+``` json 
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/b5IB4VGjR818tTNcCLHQCIFwQmW.jpg",
+            "genre_ids": [
+                28,
+                53
+            ],
+            "id": 10431,
+            "original_language": "en",
+            "original_title": "War",
+            "overview": "FBI agent Jack Crawford is out for revenge when his partner is killed and all clues point to the mysterious assassin Rogue. But when Rogue turns up years later to take care of some unfinished business, he triggers a violent clash of rival gangs. Will the truth come out before it's too late? And when the dust settles, who will remain standing?",
+            "popularity": 30.291,
+            "poster_path": "/scFc8RD4sFxB2x0eIOaymphMnYh.jpg",
+            "release_date": "2007-08-24",
+            "title": "War",
+            "video": false,
+            "vote_average": 6.3,
+            "vote_count": 1649
+        },
+        ...
+    ]
+    ...
+}
+
+```
+
+
+
+
+## Fetch details of a Movie
+Searchs for movies based on the provided search query.
+
+- **URL**: `/movies/details/:movie_id`
+- **Method**: GET
+- **URL Parameters**:
+  - `movie_id` (required): the ID of the movie.
+- **Response**: Returns a JSON object with details of the movie.
+
+``` json 
+{
+    "adult": false,
+    "backdrop_path": null,
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 10752,
+            "name": "War"
+        }
+    ],
+    "homepage": "",
+    "id": 936417,
+    "imdb_id": "tt0343165",
+    "original_language": "en",
+    "original_title": "War",
+    "overview": "In the gray dawn of an October day, as the inhabitants of a village street in Tripoli are engaged in the enjoyment of their several pursuits of life, an Arab rushes upon the peaceful scene, announcing that Italy has declared war against Turkey and that the Italian warships are now in the harbor, shelling the city.",
+    "popularity": 0.6,
+    "poster_path": null,
+    "production_companies": [
+        {
+            "id": 15634,
+            "logo_path": null,
+            "name": "Vitagraph Company of America",
+            "origin_country": "US"
+        }
+    ],
+    ...
+}
+```
+
+
+
+## Fetch Top-Rated Movies
+Searchs for movies based on the provided search query.
+
+- **URL**: `/movies/top-rated/:page?`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (required): page number.
+- **Response**: Returns a JSON object with a list of top rated movies right now.
+``` json 
+{
+    "page": 3,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/dVr11o9or7AS8AMPfwjSpEU83iU.jpg",
+            "genre_ids": [
+                18,
+                10752
+            ],
+            "id": 423,
+            "original_language": "en",
+            "original_title": "The Pianist",
+            "overview": "The true story of pianist Władysław Szpilman's experiences in Warsaw during the Nazi occupation. When the Jews of the city find themselves forced into a ghetto, Szpilman finds work playing in a café; and when his family is deported in 1942, he stays behind, works for a while as a laborer, and eventually goes into hiding in the ruins of the war-torn city.",
+            "popularity": 51.385,
+            "poster_path": "/2hFvxCCWrTmCYwfy7yum0GKRi3Y.jpg",
+            "release_date": "2002-09-17",
+            "title": "The Pianist",
+            "video": false,
+            "vote_average": 8.4,
+            "vote_count": 8699
+        },
+        ...
+    ]
+    ...
+}
+
+```
+
+### Discover TV Shows
+
+Discover TV Shows.
+
+- **URL**: `/tv/discover/:page`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (required): The page number.
+- **Response**: Returns a JSON object with an array of tv shows.
+
+``` json 
+{
+    "page": 5,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/5MWFjQ3NuNtNeOE9FdrVLeNMNPs.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10751,
+                10765
+            ],
+            "id": 1877,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Phineas and Ferb",
+            "overview": "Each day, two kindhearted suburban stepbrothers on summer vacation embark on some grand new project, which annoys their controlling sister, Candace, who tries to bust them. Meanwhile, their pet platypus plots against evil Dr. Doofenshmirtz.",
+            "popularity": 1245.909,
+            ...
+        }
+        ...
+    ]
+    ...
+}
+```
+
+
+
+### Search TV Shows
+Discover TV Shows.
+
+- **URL**: `/tv/search/:title/:year?/:page`
+- **Method**: GET
+- **URL Parameters**:
+   - `title` (required): The title of the tv show.
+  - `year` (optional): The year the show was released.
+  - `page` (optional): The page number
+- **Response**: Returns a JSON object with an array of tv shows.
+
+
+### Fetch TV Show details
+Discover TV Shows.
+
+- **URL**: `/tv/details/:id`
+- **Method**: GET
+- **URL Parameters**:
+   - `id` (required): The id of the tv show.
+- **Response**: Returns a JSON object with an array of tv shows.
+``` json 
+{
+    "adult": false,
+    "backdrop_path": "/vaNcnuLNiNRPt9bbeTmdBXFw31W.jpg",
+    "created_by": [
+        {
+            "id": 932979,
+            "credit_id": "6133484e1fb94f002ac17127",
+            "name": "Fujiko F. Fujio",
+            "gender": 2,
+            "profile_path": "/gRJZtARGLTh0tU1ZGPuJhrHiHWJ.jpg"
+        }
+    ],
+    "episode_run_time": [
+        15
+    ],
+    "first_air_date": "1983-04-04",
+    "genres": [
+        {
+            "id": 16,
+            "name": "Animation"
+        },
+        {
+            "id": 10759,
+            "name": "Action & Adventure"
+        },
+        ...
+    ]
+    ...
+}
+
+```
+
+
+### Fetch TV Show Season details
+Discover TV Shows.
+
+- **URL**: `/tv/details/:id/season/:season_number`
+- **Method**: GET
+- **URL Parameters**:
+   - `id` (required): The id of the tv show.
+   - `season_number(required)`: The Seaon you want to know more about
+- **Response**: Returns a JSON object with details of the season of the tv show.
+``` json 
+{
+    "_id": "61333b015e12000061d0d821",
+    "air_date": "1983-04-04",
+    "episodes": [
+        {
+            "air_date": "1983-04-04",
+            "episode_number": 1,
+            "episode_type": "standard",
+            "id": 3182037,
+            "name": "Episode 1",
+            "overview": "",
+            "production_code": "",
+            "runtime": 15,
+            "season_number": 1,
+            "show_id": 132791,
+            "still_path": null,
+            "vote_average": 0,
+            "vote_count": 0,
+            "crew": [],
+            "guest_stars": []
+            ...
+        },
+        ...
+    ]
+    ...
+}
+
+```
+
+
+
+### Fetch TV Show Season Episode details
+Discover TV Shows.
+
+- **URL**: `/tv/details/:id/season/:season_number/episode/:episode_number?`
+- **Method**: GET
+- **URL Parameters**:
+   - `id` (required): The id of the tv show.
+   - `season_number(required)`: The Seaon you want to know more about
+   - `episode_number`(optional): The Episode you are looking for, default is `1`
+- **Response**: Returns a JSON object with details of an episode. 
+
+``` json 
+{
+    "_id": "61333b015e12000061d0d821",
+    "air_date": "1983-04-04",
+    "episodes": [
+        {
+            "air_date": "1983-04-04",
+            "episode_number": 1,
+            "episode_type": "standard",
+            "id": 3182037,
+            "name": "Episode 1",
+            "overview": "",
+            "production_code": "",
+            "runtime": 15,
+            "season_number": 1,
+            "show_id": 132791,
+            "still_path": null,
+            "vote_average": 0,
+            "vote_count": 0,
+            "crew": [],
+            "guest_stars": []
+        },
+    ]
+}
+```
+
+
+### Find Trending TV Shows
+
+Fetch currently trending TV Shows.
+
+- **URL**: `/tv/trending/:page`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (required): The page number.
+- **Response**: Returns a JSON object with an array of trending movies` .
+``` json 
+{
+    "page": 6,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/hPea3Qy5Gd6z4kJLUruBbwAH8Rm.jpg",
+            "id": 60059,
+            "name": "Better Call Saul",
+            "original_language": "en",
+            "original_name": "Better Call Saul",
+            "overview": "Six years before Saul Goodman meets Walter White. We meet him when the man who will become Saul Goodman is known as Jimmy McGill, a small-time lawyer searching for his destiny, and, more immediately, hustling to make ends meet. Working alongside, and, often, against Jimmy, is “fixer” Mike Ehrmantraut. The series tracks Jimmy’s transformation into Saul Goodman, the man who puts “criminal” in “criminal lawyer\".",
+            "poster_path": "/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+            ....
+        }
+        ...
+    ]
+}
+
+```
+
+
+
+### Find Top-Rated TV Shows
+
+Fetch currently top-rated TV Shows.
+
+- **URL**: `/tv/top-rated/:page`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (required): The page number.
+- **Response**: Returns a JSON object with an array of top-rated movies` .
+``` json 
+{
+    "page": 8,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/vgID0DBcINTIhS7EVzVUPdFYdix.jpg",
+            "genre_ids": [
+                16,
+                18,
+                80,
+                9648
+            ],
+            "id": 30981,
+            "origin_country": [
+                "JP"
+            ],
+            "original_language": "ja",
+            "original_name": "MONSTER",
+            "overview": "Kenzou Tenma, a Japanese brain surgeon in Germany, finds his life in utter turmoil after getting involved with a psychopath that was once a former patient.",
+            "popularity": 202.39,
+            "poster_path": "/n5XNKXnoXpoXyfiCtXHOf8q8PFM.jpg",
+            "first_air_date": "2004-04-06",
+            "name": "Monster",
+            "vote_average": 8.5,
+            "vote_count": 493
+        },
+
+}
+     
