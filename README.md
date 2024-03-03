@@ -45,6 +45,6 @@ You can help support the project in three ways. ✨
 1. **By Starring the Repo** 
 1. **By Sharing this Project to Your Friends and Community**
 
-You can use this [Public APIs Repository](https://github.com/public-apis/public-apis) for inpiration and APIs to implement.
+You can use this [Public APIs Repository](https://github.com/public-apis/public-apis) for inspiration and APIs to implement.
 
 # Drop a star while you're at it ✨
