@@ -22,6 +22,7 @@ import reddit from "./routes/reddit"
 import news from "./routes/news"
 import movieDB from "./routes/moviedb"
 import flixquest from "./routes/flixquest";
+import lyrics from "./routes/lyrics";
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -35,6 +36,7 @@ app.route('/reddit', reddit) // Reddit
 app.route('/news', news) // NewsAPI
 app.route('/moviedb', movieDB) // TheMovieDB
 app.route('/flixquest', flixquest) // FlixQuest
+app.route('/lyrics', lyrics) // Lyrics
 
 
 //* ERROR HANDLING

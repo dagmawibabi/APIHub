@@ -10,7 +10,7 @@ app.get("/", (c) => {
 })
 
 //* LYRICS
-app.get("/lyrics/:artist/:title", async (c) => {
+app.get("/:artist/:title", async (c) => {
     var artist = c.req.param("artist")
     var title = c.req.param("title")
     var result = await axios.get(`https://api.lyrics.ovh/v1/${artist}/${title}`)
