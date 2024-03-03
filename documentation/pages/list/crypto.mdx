@@ -1,0 +1,50 @@
+
+## 🪙 Crypto API
+
+
+All routes for Crypto API start with  `/crypto`
+
+
+---
+
+## Market Information
+
+Retrieves the current prices and general market information for cryptocurrencies.
+
+- **URL**: `/market`
+- **Method**: GET
+- **Response**: Returns a JSON object with the current prices and general market information for cryptocurrencies. The information is fetched from the CoinGecko API.
+``` json 
+[
+    {
+        "id": "bitcoin",
+        "symbol": "btc",
+        "name": "Bitcoin",
+        "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+        "current_price": 62010,
+        "market_cap": 1217055823975,
+        "market_cap_rank": 1,
+        "fully_diluted_valuation": 1301153726498,
+        "total_volume": 31934781082,
+        "high_24h": 63136,
+        "low_24h": 61269,
+        "price_change_24h": -585.609331760752,
+        "price_change_percentage_24h": -0.93554,
+        "market_cap_change_24h": -12949567078.164307,
+        "market_cap_change_percentage_24h": -1.05281,
+        "circulating_supply": 19642700,
+        "total_supply": 21000000,
+        "max_supply": 21000000,
+        "ath": 69045,
+        "ath_change_percentage": -10.25723,
+        "ath_date": "2021-11-10T14:24:11.849Z",
+        "atl": 67.81,
+        "atl_change_percentage": 91278.26979,
+        "atl_date": "2013-07-06T00:00:00.000Z",
+        "roi": null,
+        "last_updated": "2024-03-02T13:46:11.682Z"
+    },
+   
+    ...
+]
+```

@@ -1,0 +1,135 @@
+## ☁️ Weather API
+All routes for Weather start with  `/weather`
+
+---
+
+## Forecast by Location and Number of Days
+
+Retrieves the weather forecast information for a specified location and number of days.
+
+- **URL**: `/forecast/:location/:numberOfDays`
+- **Method**: GET
+- **URL Parameters**:
+  - `location` (required): The location for which to retrieve the weather forecast.
+  - `numberOfDays` (required): The number of days for which to retrieve the weather forecast.
+- **Response**: Returns a JSON object with the weather forecast information for the specified location and number of days.
+``` json 
+
+{
+    "location": {
+        "name": "Concord Regional Airport",
+        "region": "Concord",
+        "country": "United States of America",
+        "lat": 35.39,
+        "lon": -80.71,
+        "tz_id": "America/New_York",
+        "localtime_epoch": 1709389600,
+        "localtime": "2024-03-02 9:26"
+    },
+    "current": {
+        "last_updated_epoch": 1709388900,
+        "last_updated": "2024-03-02 09:15",
+        "temp_c": 8,
+        "temp_f": 46.4,
+        "is_day": 1,
+        "condition": {
+            "text": "Mist",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/143.png",
+            "code": 1030
+        },
+        "wind_mph": 4.3,
+        "wind_kph": 6.8,
+        "wind_degree"
+        ...
+    }
+    ...
+}
+```
+---
+
+## Forecast by Latitude and Longitude
+
+Retrieves the weather forecast information for a specified latitude and longitude.
+
+- **URL**: `/forecast/:latitude/:longitude`
+- **Method**: GET
+- **URL Parameters**:
+  - `latitude` (required): The latitude for which to retrieve the weather forecast.
+  - `longitude` (required): The longitude for which to retrieve the weather forecast.
+- **Response**: Returns a JSON object with the weather forecast information for the specified latitude and longitude.
+``` json 
+
+{
+    "location": {
+        "name": "Cleveland",
+        "region": "Ohio",
+        "country": "United States of America",
+        "lat": 41.5,
+        "lon": -81.7,
+        "tz_id": "America/New_York",
+        "localtime_epoch": 1709389738,
+        "localtime": "2024-03-02 9:28"
+    },
+    "current": {
+        "last_updated_epoch": 1709388900,
+        "last_updated": "2024-03-02 09:15",
+        "temp_c": 6.7,
+        "temp_f": 44.1,
+        "is_day": 1,
+        "condition": {
+            "text": "Fog",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/248.png",
+            "code": 1135
+        },
+        "wind_mph": 5.6,
+        "wind_kph": 9,
+        "wind_degree": 290,
+        "wind_dir": "WNW",
+        "pressure_mb": 1021,
+        "pressure_in": 30.14,
+        "precip_mm": 0.21,
+        "precip_in": 0.01,
+        "humidity": 85,
+        ...
+    }
+    ...
+}
+```
+
+---
+
+## Search by Location
+
+Searches for weather data for the chosen location.
+
+- **URL**: `/search/:location`
+- **Method**: GET
+- **URL Parameters**:
+  - `location` (required): The location for which to search for weather data.
+- **Response**: Returns a JSON object with the search results for the specified location.
+``` json 
+
+[
+    {
+        "id": 727985,
+        "name": "Addis Abeba",
+        "region": "",
+        "country": "Ethiopia",
+        "lat": 9.03,
+        "lon": 38.7,
+        "url": "addis-abeba-ethiopia"
+    },
+    {
+        "id": 2566014,
+        "name": "Addison",
+        "region": "Illinois",
+        "country": "United States of America",
+        "lat": 41.93,
+        "lon": -87.99,
+        "url": "addison-illinois-united-states-of-america"
+    },
+    ...
+]
+
+```
+---

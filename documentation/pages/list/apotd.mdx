@@ -1,0 +1,122 @@
+
+## 👩‍🚀  Astronomy Picture of the Day (APOTD)
+
+All routes for APOTD start with  `/apotd`
+
+---
+
+## Today's APOTD
+
+Retrieves the Astronomy Picture of the Day (APOTD) for the current day.
+
+- **URL**: `/today`
+- **Method**: GET
+- **Response**: Returns a JSON object with the APOTD for the current day.
+``` json
+{
+    "date": "2024-03-02",
+    "explanation": "Methalox rocket engine firing, Odysseus' landing legs absorb first contact with the lunar surface in this wide-angle snapshot from a camera on board the robotic Intuitive Machines Nova-C moon lander. Following the landing on February 22, broken landing legs, visible in the image, ultimately left the lander at rest but tilted. Odysseus' gentle lean into a sloping lunar surface preserved the phone booth-sized lander's ability to operate, collect solar power, and return images and data to Earth. Its exact landing site in the Moon's far south polar region was imaged by NASA's Lunar Reconnaissance Orbiter. Donated by NASA, the American flag seen on the lander's central panel is 1970 Apollo program flight hardware.",
+    "hdurl": "https://apod.nasa.gov/apod/image/2403/IM_Odysseus_landing-2048x1118.png",
+    "media_type": "image",
+    "service_version": "v1",
+    "title": "Odysseus on the Moon",
+    "url": "https://apod.nasa.gov/apod/image/2403/IM_Odysseus_landing-1100x600.png"
+}
+```
+---
+
+## Random APOTD
+
+Retrieves a specified number of random APOTD photographs from the archive.
+
+- **URL**: `/random/:amount`
+- **Method**: GET
+- **URL Parameters**:
+  - `amount` (required): The number of random photographs to fetch.
+- **Response**: Returns a JSON object with the specified number of random APOTD photographs.
+``` json
+
+
+[
+    {
+        "date": "2007-04-04",
+        "explanation": "Spewed from a volcano, a complex plume rises over 300 kilometers above the horizon of Jupiter's moon Io in this image from cameras onboard the New Horizons spacecraft. The volcano, Tvashtar, is marked by the bright glow (about 1 o'clock) at the moon's edge, beyond the terminator or night/day shadow line. The shadow of Io cuts across the plume itself. Also capturing stunning details on the dayside surface, the high resolution image was recorded when the spacecraft was 2.3 million kilometers from Io. Later it was combined with lower resolution color data by astro-imager Sean Walker to produce this sharp portrait of the solar system's most active moon. Outward bound at almost 23 kilometers per second, the New Horizons spacecraft should cross the orbit of Saturn in June next year, and is ultimately destined to encounter Pluto in 2015.",
+        "hdurl": "https://apod.nasa.gov/apod/image/0704/io_walkerNH.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "New Horizons at Io",
+        "url": "https://apod.nasa.gov/apod/image/0704/io_walkerNH520.jpg"
+    },
+    {
+        "date": "2012-02-25",
+        "explanation": "The first identified compact galaxy group, Stephan's Quintet is featured in this eye-catching image constructed with data drawn from the extensive Hubble Legacy Archive. About 300 million light-years away, only four of these five galaxies are actually locked in a cosmic dance of repeated close encounters. The odd man out is easy to spot, though. The interacting galaxies, NGC 7319, 7318A, 7318B, and 7317 have an overall yellowish cast. They also tend to have distorted loops and tails, grown under the influence of disruptive gravitational tides. But the predominantly bluish galaxy, NGC 7320, is closer, just 40 million light-years distant, and isn't part of the interacting group. Stephan's Quintet lies within the boundaries of the high flying constellation Pegasus. At the estimated distance of the quartet of interacting galaxies, this field of view spans about 500,000 light-years. However, moving just beyond this field, above and to the left, astronomers can identify another galaxy, NGC 7320C, that is also 300 million light-years distant. Of course, including it would bring the interacting quartet back up to quintet status.",
+        "hdurl": "https://apod.nasa.gov/apod/image/1202/Stephans5_Kelly3000c.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Stephan's Quintet",
+        "url": "https://apod.nasa.gov/apod/image/1202/Stephans5_Kelly900c.jpg"
+    }
+]
+
+
+```
+---
+
+## Weekly APOTD
+
+Retrieves the APOTD images for the past seven days.
+
+- **URL**: `/weekly`
+- **Method**: GET
+- **Response**: Returns a JSON object with the APOTD images for the past seven days.
+``` json 
+[
+    {
+        "date": "2024-02-24",
+        "explanation": "Intuitive Machines' robotic lander Odysseus has accomplished the first U.S. landing on the Moon since the Apollo 17 mission in 1972. Launched on a SpaceX rocket on February 15, the phone booth sized lander reached lunar orbit on the 21st and touched down on the lunar surface at 6:23 pm ET on February 22nd. Its landing region is about 300 kilometers north of the Moon's south pole, near a crater designated Malapert A. Resting on its side, the lander is presently collecting solar power and transmitting data back to the Intuitive Machines' mission control center in Houston. The mission marks the first commercial uncrewed landing on the Moon. Prior to landing, Odysseus’ camera captured this extreme wide angle image (landing legs visible at right) as it flew over Schomberger crater some 200 kilometers from its landing site. Odysseus was still about 10 kilometers above the lunar surface.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2402/im-moon-imageFeb23_1024.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Odysseus to the Moon",
+        "url": "https://apod.nasa.gov/apod/image/2402/im-moon-imageFeb23_1024.jpg"
+    },
+    {
+        "copyright": "\nHallgrimur P. Helgason;\n Rollover Annotation: \nJudy Schmidt\n",
+        "date": "2024-02-25",
+        "explanation": "All of the other aurora watchers had gone home. By 3:30 am in Iceland, on a quiet September night, much of that night's auroras had died down. Suddenly, unexpectedly, a new burst of particles streamed down from space, lighting up the Earth's atmosphere once again. This time, surprisingly, pareidoliacally, the night lit up with an  amazing shape reminiscent of a giant phoenix. With camera equipment at the ready, two quick sky images were taken, followed immediately by a third of the land.  The mountain in the background is Helgafell, while the small foreground river is called Kaldá, both located about 30 kilometers north of Iceland's capital Reykjavík. Seasoned skywatchers will note that just above the mountain, toward the left, is the constellation of Orion, while the Pleiades star cluster is also visible just above the frame center.  The 2016 aurora, which lasted only a minute and was soon gone forever --  would possibly be dismissed as a fanciful fable -- were it not captured in the featured, digitally-composed, image mosaic.   Your Sky Surprise: What picture did APOD feature on your birthday? (post 1995)",
+        "hdurl": "https://apod.nasa.gov/apod/image/2402/PhoenixAurora_Helgason_3130.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "A Phoenix Aurora over Iceland",
+        "url": "https://apod.nasa.gov/apod/image/2402/PhoenixAurora_Helgason_960.jpg"
+    },
+]
+
+
+```
+
+---
+
+## Monthly APOTD
+
+Retrieves the APOTD images for the past 30 days.
+
+- **URL**: `/monthly`
+- **Method**: GET
+- **Response**: Returns in the same was `/weekly` .
+
+---
+
+## Specific Date APOTD
+
+Retrieves the APOTD image for a specific date.
+
+- **URL**: `/specific/:year/:month/:day`
+- **Method**: GET
+- **URL Parameters**:
+  - `year` (required): The year of the APOTD image.
+  - `month` (required): The month of the APOTD image.
+  - `day` (required): The day of the APOTD image.
+- **Response**: Returns a JSON object with the APOTD image for the specified date.
+
+---
