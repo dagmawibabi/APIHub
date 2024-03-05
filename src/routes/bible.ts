@@ -9,78 +9,41 @@ app.get("/", (c) => {
     return c.text(welcomeMessage)
 })
 
+
 //* BOOKS
 app.get("/books", async (c)=>{
     var Bible_apikey = process.env.BIBLEAPIKEY
-    const options = {
-        method: 'GET',
-        url: 'https://ajith-holy-bible.p.rapidapi.com/GetBooks',
-        headers: {
-          'X-RapidAPI-Key': Bible_apikey,
-          'X-RapidAPI-Host': 'ajith-holy-bible.p.rapidapi.com'
-        }
-      };
-    var result = await axios.request(options);
+    var result = await axios.get(`https://ajith-holy-bible.p.rapidapi.com/GetBooks?rapidapi-key=${Bible_apikey}`)
     return c.json(result.data)    
 })
 
 //* CHAPTER
-app.get("/books/chapter", async (c)=>{
+app.get("/:book/:chapter", async (c)=>{
     var Bible_apikey = process.env.BIBLEAPIKEY
-    const options = {
-        method: 'GET',
-        url: 'https://ajith-holy-bible.p.rapidapi.com/GetChapter',
-        params: {
-          Book: 'Luke',
-          chapter: '8'
-        },
-        headers: {
-          'X-RapidAPI-Key': Bible_apikey,
-          'X-RapidAPI-Host': 'ajith-holy-bible.p.rapidapi.com'
-        }
-      };
-    var result = await axios.request(options);
+     var book = c.req.param("book")
+     var chapter = c.req.param("chapter")
+     var result = await axios.get(`https://ajith-holy-bible.p.rapidapi.com/GetChapter?book=${book}$chapter=${chapter}&rapidapi-key=${Bible_apikey}`)
     return c.json(result.data)    
 })
 
 //* VERSES
-app.get("/books/chapter/verses", async (c)=>{
+app.get("/:book/:chapter/:verses_from/:verses_to", async (c)=>{
     var Bible_apikey = process.env.BIBLEAPIKEY
-    const options = {
-        method: 'GET',
-        url: 'https://ajith-holy-bible.p.rapidapi.com/GetVerses',
-        params: {
-          Book: 'Luke',
-          chapter: '1',
-          VerseFrom: '5',
-          VerseTo: '8'
-        },
-        headers: {
-          'X-RapidAPI-Key': Bible_apikey,
-          'X-RapidAPI-Host': 'ajith-holy-bible.p.rapidapi.com'
-        }
-      };
-    var result = await axios.request(options);
+    var book = c.req.param("book")
+    var chapter = c.req.param("chapter")
+    var verses_from = c.req.param("verses_from")
+    var verses_to = c.req.param("verses_to")
+    var result = await axios.get(`https://ajith-holy-bible.p.rapidapi.com/GetVerses?book=${book}&chapter=${chapter}&VerseFrom=${verses_from}&VerseTo = ${verses_to}&rapidapi-key=${Bible_apikey}`)
     return c.json(result.data)    
 })
 
 //* VERSE OF CHAPTER
-app.get("/books/chapter/verse", async (c)=>{
+app.get("/:book/:chapter/:verse", async (c)=>{
     var Bible_apikey = process.env.BIBLEAPIKEY
-    const options = {
-        method: 'GET',
-        url: 'https://ajith-holy-bible.p.rapidapi.com/GetVerseOfaChapter',
-        params: {
-          Book: 'Luke',
-          chapter: '1',
-          Verse: '1'
-        },
-        headers: {
-          'X-RapidAPI-Key': Bible_apikey,
-          'X-RapidAPI-Host': 'ajith-holy-bible.p.rapidapi.com'
-        }
-      };
-    var result = await axios.request(options);
+    var book = c.req.param("book")
+    var chapter = c.req.param("chapter")
+    var verse = c.req.param("verse")
+    var result = await axios.get(`https://ajith-holy-bible.p.rapidapi.com/GetVerseOfaChapter?book=${book}&chapter=${chapter}&Verse=${verse}&rapidapi-key=${Bible_apikey}`)
     return c.json(result.data)    
 })
 
