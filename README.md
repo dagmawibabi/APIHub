@@ -26,6 +26,7 @@ So I decided to make APIHub, a parent API to all other APIs. I don't have to rel
 - 🎶 [Lyrics](https://api.lyrics.ovh)
 - 👤 [JSON Placeholder](https://jsonplaceholder.typicode.com)
 - :book: [BibleAPI](https://rapidapi.com/ajith/api/holy-bible/)
+- 🏳️[REST Countries](https://restcountries.com)
 
 ## APIs To Be Integrated Soon
 
