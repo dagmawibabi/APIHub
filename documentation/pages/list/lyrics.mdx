@@ -1,0 +1,25 @@
+## 🎵 Lyrics API
+All routes for Lyrics start with `/lyrics`
+
+---
+
+## Lyrics by Artist and Title
+
+Retrieves the lyrics for a specified song by artist and title.
+
+- **URL**: `/lyrics/:artist/:title`
+- **Method**: GET
+- **URL Parameters**:
+    - `artist` (required): The artist of the song for which to retrieve the lyrics.
+    - `title` (required): The title of the song for which to retrieve the lyrics.
+- **Response**: Returns a JSON object with the lyrics for the specified song.
+
+**Example Request:**
+
+```plaintext
+GET /lyrics/Elton John/Your Song
+
+```json
+{
+    "lyrics": "Paroles de la chanson Your song par Elton ...."
+}
