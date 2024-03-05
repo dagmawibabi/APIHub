@@ -4,17 +4,17 @@ import axios from 'axios'
 const app = new Hono()
 
 //* INTRODUCTION
-var welcomeMessage = "Welcome to the Rest Countries service! Use the following endpoints to access country data: \n" +
-    "/all - Fetch all countries \n" +
-    "/:name - Fetch a country by name \n" +
-    "/code/:code - Fetch a country by code \n" +
-    "/codes/:codes - Fetch a list of countries by codes \n" +
-    "/currency/:currency - Fetch countries by currency \n" +
-    "/language/:language - Fetch countries by language \n" +
-    "/capital/:capital - Fetch countries by capital city \n" +
-    "/region/:region - Fetch countries by region \n" +
-    "/subregion/:subregion - Fetch countries by subregion";
-
+var welcomeMessage = `Welcome to the Rest Countries service! Use the following endpoints to access country data: 
+- Fetch all countries: /all 
+- Fetch a country by name: /:name 
+- Fetch a country by code: /code/:code 
+- Fetch a list of countries by codes: /codes/:codes 
+- Fetch countries by currency: /currency/:currency 
+- Fetch countries by language: /language/:language 
+- Fetch countries by capital city: /capital/:capital 
+- Fetch countries by region: /region/:region 
+- Fetch countries by subregion: /subregion/:subregion
+- Fetch countries and filter by fields: /filter`;
 app.get("/", (c) => {
     return c.text(welcomeMessage)
 })
@@ -86,6 +86,14 @@ app.get("/region/:region", async (c) => {
 app.get("/subregion/:subregion", async (c) => {
     var subregion = c.req.param("subregion")
     var result = await axios.get(`https://restcountries.com/v3.1/subregion/${subregion}`)
+    var countries = result.data
+    return c.json(countries)
+})
+
+//* FETCH COUNTRIES AND FILTER BY FIELDS
+app.get("/filter", async (c) => {
+    var fields = c.req.param("fields")
+    var result = await axios.get(`https://restcountries.com/v3.1/all?fields=${fields}`)
     var countries = result.data
     return c.json(countries)
 })
