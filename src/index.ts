@@ -24,6 +24,7 @@ import movieDB from "./routes/moviedb"
 import flixquest from "./routes/flixquest";
 import lyrics from "./routes/lyrics";
 import jsonplaceholder from "./routes/jsonplaceholder";
+import bible from "./routes/bible";
 import restcountries from "./routes/restcountries";
 
 //* ENDPOINTS
@@ -40,8 +41,8 @@ app.route('/moviedb', movieDB) // TheMovieDB
 app.route('/flixquest', flixquest) // FlixQuest
 app.route('/lyrics', lyrics) // Lyrics
 app.route('/jsonplaceholder', jsonplaceholder) // JSON Placeholder
-app.route('/restcountries', restcountries) // Rest Countries
-
+app.route('/bible',bible) // Bible
+app.route('/restcountries', restcountries) // REST Countries
 
 
 //* ERROR HANDLING
