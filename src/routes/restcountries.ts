@@ -13,8 +13,7 @@ var welcomeMessage = `Welcome to the Rest Countries service! Use the following e
 - Fetch countries by language: /language/:language 
 - Fetch countries by capital city: /capital/:capital 
 - Fetch countries by region: /region/:region 
-- Fetch countries by subregion: /subregion/:subregion
-- Fetch countries and filter by fields: /filter`;
+- Fetch countries by subregion: /subregion/:subregion`;
 app.get("/", (c) => {
     return c.text(welcomeMessage)
 })
@@ -86,14 +85,6 @@ app.get("/region/:region", async (c) => {
 app.get("/subregion/:subregion", async (c) => {
     var subregion = c.req.param("subregion")
     var result = await axios.get(`https://restcountries.com/v3.1/subregion/${subregion}`)
-    var countries = result.data
-    return c.json(countries)
-})
-
-//* FETCH COUNTRIES AND FILTER BY FIELDS
-app.get("/filter", async (c) => {
-    var fields = c.req.param("fields")
-    var result = await axios.get(`https://restcountries.com/v3.1/all?fields=${fields}`)
     var countries = result.data
     return c.json(countries)
 })
