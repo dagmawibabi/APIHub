@@ -27,6 +27,7 @@ import jsonplaceholder from "./routes/jsonplaceholder";
 import bible from "./routes/bible";
 import restcountries from "./routes/restcountries";
 import randomUser from "./routes/randomuser";
+import youtube from "./routes/youtube"
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -45,6 +46,7 @@ app.route('/jsonplaceholder', jsonplaceholder) // JSON Placeholder
 app.route('/bible',bible) // Bible
 app.route('/restcountries', restcountries) // REST Countries
 app.route('/randomuser', randomUser) // Random User
+app.route('/youtube',youtube) // Youtube
 
 
 //* ERROR HANDLING
