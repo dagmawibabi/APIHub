@@ -12,12 +12,11 @@ const welcomeMessage = `
 
     - Searching and Filtering articles: /articles/search/:q
 
-    - Fetching Best seller Books: best-seller/books/:list-name
-    - Fetch Best Seller Books by Date: best-seller/books/:bestseller-date/:list-name
-    - Fetch Best Seller list names: best-seller/books/names
-    - Fetch overview of best seller books by date: best-seller/books/overview/
-    - Fetch Top 5 Best Seller Books: best-seller/books/overview/top5/
-    - Fetch Best Seller list History: best-seller/books/history
+    - Fetching Best seller Books: bestseller/books/:list-name
+    - Fetch Best Seller Books by Date: bestseller/books/:bestseller-date/:list-name
+    - Fetch Best Seller list names: bestseller/books/names
+    - Fetch overview of best seller books by date: bestseller/books/overview/
+    - Fetch Top 5 Best Seller Books: bestseller/books/overview/top5/
 
     - Fetch Popular Articles based on view: /popular/viewed/:period
     - Fetching most shared Articles: /popular/shared/:period
@@ -32,9 +31,10 @@ app.get("/", (c) => {
 
 //* ARCHIVE
 app.get("/archive/:year/:month", async (c) => {
+    console.log("Archive");
     const API_Key = process.env.NYTIMESAPIKEY;
-    const year: string = c.req.param("year");
-    const month: string = c.req.param("month");
+    const year: number = parseInt(c.req.param("year"));
+    const month: number = parseInt(c.req.param("month"));
     
     const result = await axios.get(`https://api.nytimes.com/svc/archive/v1/${year}/${month}.json?api-key=${API_Key}`);
 
@@ -142,35 +142,6 @@ app.get("bestsellers/books/overview/top5", async (c) => {
     return c.json(result.data);
 })
 
-
-//Best Seller list History
-app.get("bestsellers/books/history", async (c) => {
-    console.log("Best Seller list History");
-    const API_Key = process.env.NYTIMESAPIKEY;
-    const age_group: string = c.req.query("age-group") || "";
-    const author: string = c.req.query("author") || "";
-    const contributor: string = c.req.query("contributor") || "";
-    const isbn: string = c.req.query("isbn") || "";
-    const publisher: string = c.req.query("publisher") || "";
-    const title: string = c.req.query("title") || "";
-    const price: string = c.req.query("price") || "";
-    const offset: string = c.req.query("offset") || "";
-
-    let url = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${API_Key}`;
-    if (age_group) url += `&age-group=${age_group}`;
-    if (author) url += `&author=${author}`;
-    if (contributor) url += `&contributor=${contributor}`;
-    if (isbn) url += `&isbn=${isbn}`;
-    if (publisher) url += `&publisher=${publisher}`;
-    if (title) url += `&title=${title}`;
-    if (price) url += `&price=${price}`;
-    if (offset) url += `&offset=${offset}`;
-
-    const result = await axios.get(url);
-    return c.json(result.data);
-
-})
-
 //popular articles based on view
 app.get("popular/viewed/:period", async (c) => {
     const API_Key = process.env.NYTIMESAPIKEY;
@@ -189,7 +160,7 @@ app.get("popular/shared/:period", async (c) => {
     return c.json(result.data);
 })
 
-//popular articles based on shared via specific social media
+//popular articles based shared via specific social media
 app.get("popular/shared/:period/:source", async (c) => {
     const API_Key = process.env.NYTIMESAPIKEY;
     const period: string = c.req.param("period");
