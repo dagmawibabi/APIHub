@@ -26,6 +26,7 @@ import lyrics from "./routes/lyrics";
 import jsonplaceholder from "./routes/jsonplaceholder";
 import bible from "./routes/bible";
 import restcountries from "./routes/restcountries";
+import newyorktimes from "./routes/newyorktimes";
 
 //* ENDPOINTS
 app.route('/github', github) // GitHub
@@ -43,6 +44,7 @@ app.route('/lyrics', lyrics) // Lyrics
 app.route('/jsonplaceholder', jsonplaceholder) // JSON Placeholder
 app.route('/bible',bible) // Bible
 app.route('/restcountries', restcountries) // REST Countries
+app.route("/nytimes", newyorktimes) // New York Times
 
 
 //* ERROR HANDLING
