@@ -1,0 +1,1851 @@
+## Rest Countries API
+
+All routes for restcountries starts with /restcountries
+
+### Fetch All Countries
+
+Retrieves all Countries.
+
+- **URL**: `/all`
+- **Method**: GET
+- **Response**: Returns a JSON array with all (195) Countries.
+
+**Example Request:**
+
+```plaintext
+GET /all
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Cyprus",
+            "official": "Republic of Cyprus",
+            "nativeName": {
+                "ell": {
+                    "official": "Δημοκρατία της Κύπρος",
+                    "common": "Κύπρος"
+                },
+                "tur": {
+                    "official": "Kıbrıs Cumhuriyeti",
+                    "common": "Kıbrıs"
+                }
+            }
+        },
+        "tld": [
+            ".cy"
+        ],
+        "cca2": "CY",
+        "ccn3": "196",
+        "cca3": "CYP",
+        "cioc": "CYP",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": [
+                "57"
+            ]
+        },
+        "capital": [
+            "Nicosia"
+        ],
+        "altSpellings": [
+            "CY",
+            "Kýpros",
+            "Kıbrıs",
+            "Republic of Cyprus",
+            "Κυπριακή Δημοκρατία",
+            "Kıbrıs Cumhuriyeti"
+        ],
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "languages": {
+            "ell": "Greek",
+            "tur": "Turkish"
+        },
+        "translations": {...},
+        "latlng": [
+            35,
+            33
+        ],
+        "landlocked": false,
+        "area": 9251,
+        "demonyms": {
+            "eng": {
+                "f": "Cypriot",
+                "m": "Cypriot"
+            },
+            "fra": {
+                "f": "Chypriote",
+                "m": "Chypriote"
+            }
+        },
+        "flag": "🇨🇾",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/77hPBRdLid8yD5Bm7",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/307787"
+        },
+        "population": 1207361,
+        "gini": {
+            "2018": 32.7
+        },
+        "fifa": "CYP",
+        "car": {
+            "signs": [
+                "CY"
+            ],
+            "side": "left"
+        },
+        "timezones": [
+            "UTC+02:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/cy.png",
+            "svg": "https://flagcdn.com/cy.svg",
+            "alt": "The flag of Cyprus has a white field, at the center of which is a copper-colored silhouette of the Island of Cyprus above two green olive branches crossed at the stem."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/cy.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/cy.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                35.17,
+                33.37
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    }
+]
+```
+
+### Fetch Countries by Name
+
+This section describes the API endpoint for fetching country data by name.
+
+### API Endpoint: Fetch Country by Name
+
+This endpoint retrieves data for a specific country by its name.
+
+- **URL**: `/:name`
+- **Method**: GET
+- **URL Params**: `name=[string]`
+- **Success Response**: Returns a JSON object with the requested country's data.
+- **Error Response**: If the specified country is not found, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /ethiopia
+```
+```json
+[
+    {
+        "name": {
+            "common": "Ethiopia",
+            "official": "Federal Democratic Republic of Ethiopia",
+            "nativeName": {
+                "amh": {
+                    "official": "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ",
+                    "common": "ኢትዮጵያ"
+                }
+            }
+        },
+        "tld": [
+            ".et"
+        ],
+        "cca2": "ET",
+        "ccn3": "231",
+        "cca3": "ETH",
+        "cioc": "ETH",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ETB": {
+                "name": "Ethiopian birr",
+                "symbol": "Br"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "51"
+            ]
+        },
+        "capital": [
+            "Addis Ababa"
+        ],
+        "altSpellings": [
+            "ET",
+            "ʾĪtyōṗṗyā",
+            "Federal Democratic Republic of Ethiopia",
+            "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "languages": {
+            "amh": "Amharic"
+        },
+        "translations": {...},
+        "latlng": [
+            8,
+            38
+        ],
+        "landlocked": true,
+        "borders": [
+            "DJI",
+            "ERI",
+            "KEN",
+            "SOM",
+            "SSD",
+            "SDN"
+        ],
+        "area": 1104300,
+        "demonyms": {
+            "eng": {
+                "f": "Ethiopian",
+                "m": "Ethiopian"
+            },
+            "fra": {
+                "f": "Éthiopienne",
+                "m": "Éthiopien"
+            }
+        },
+        "flag": "🇪🇹",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/2Q4hQWCbhuZLj3fG6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192800"
+        },
+        "population": 114963583,
+        "gini": {
+            "2015": 35
+        },
+        "fifa": "ETH",
+        "car": {
+            "signs": [
+                "ETH"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+03:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/et.png",
+            "svg": "https://flagcdn.com/et.svg",
+            "alt": "The flag of Ethiopia is composed of three equal horizontal bands of green, yellow and red, with the national emblem superimposed at the center of the field. The national emblem comprises a light blue circle bearing a golden-yellow pentagram with single yellow rays emanating from the angles between the points of the pentagram."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/et.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/et.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                9.03,
+                38.7
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    }
+]
+```
+### Fetch Countries by Code
+
+This section describes the API endpoint for fetching country data by code.
+
+## API Endpoint: Fetch Country by Code
+
+This endpoint retrieves data for a specific country by its code.
+
+- **URL**: `/code/:code`
+- **Method**: GET
+- **URL Params**: `code=[string]`
+- **Success Response**: Returns a JSON object with the requested country's data.
+- **Error Response**: If the specified country is not found, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /code/et
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Ethiopia",
+            "official": "Federal Democratic Republic of Ethiopia",
+            "nativeName": {
+                "amh": {
+                    "official": "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ",
+                    "common": "ኢትዮጵያ"
+                }
+            }
+        },
+        "tld": [
+            ".et"
+        ],
+        "cca2": "ET",
+        "ccn3": "231",
+        "cca3": "ETH",
+        "cioc": "ETH",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ETB": {
+                "name": "Ethiopian birr",
+                "symbol": "Br"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "51"
+            ]
+        },
+        "capital": [
+            "Addis Ababa"
+        ],
+        "altSpellings": [
+            "ET",
+            "ʾĪtyōṗṗyā",
+            "Federal Democratic Republic of Ethiopia",
+            "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "languages": {
+            "amh": "Amharic"
+        },
+        "translations": {...},
+        "latlng": [
+            8,
+            38
+        ],
+        "landlocked": true,
+        "borders": [
+            "DJI",
+            "ERI",
+            "KEN",
+            "SOM",
+            "SSD",
+            "SDN"
+        ],
+        "area": 1104300,
+        "demonyms": {
+            "eng": {
+                "f": "Ethiopian",
+                "m": "Ethiopian"
+            },
+            "fra": {
+                "f": "Éthiopienne",
+                "m": "Éthiopien"
+            }
+        },
+        "flag": "🇪🇹",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/2Q4hQWCbhuZLj3fG6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192800"
+        },
+        "population": 114963583,
+        "gini": {
+            "2015": 35
+        },
+        "fifa": "ETH",
+        "car": {
+            "signs": [
+                "ETH"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+03:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/et.png",
+            "svg": "https://flagcdn.com/et.svg",
+            "alt": "The flag of Ethiopia is composed of three equal horizontal bands of green, yellow and red, with the national emblem superimposed at the center of the field. The national emblem comprises a light blue circle bearing a golden-yellow pentagram with single yellow rays emanating from the angles between the points of the pentagram."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/et.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/et.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                9.03,
+                38.7
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    }
+]
+```
+
+### Fetch Countries List by Codes
+
+This section describes the API endpoint for fetching a list of countries by their codes.
+
+### API Endpoint: Fetch Countries List by Codes
+
+This endpoint retrieves data for a list of countries by their codes.
+
+- **URL**: `/codes/:codes`
+- **Method**: GET
+- **URL Params**: `codes=[string]` (comma-separated list of country codes)
+- **Success Response**: Returns a JSON array with the requested countries' data.
+- **Error Response**: If any of the specified countries are not found, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /codes/us,ca,et
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Canada",
+            "official": "Canada",
+            "nativeName": {
+                "eng": {
+                    "official": "Canada",
+                    "common": "Canada"
+                },
+                "fra": {
+                    "official": "Canada",
+                    "common": "Canada"
+                }
+            }
+        },
+        "tld": [
+            ".ca"
+        ],
+        "cca2": "CA",
+        "ccn3": "124",
+        "cca3": "CAN",
+        "cioc": "CAN",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "CAD": {
+                "name": "Canadian dollar",
+                "symbol": "$"
+            }
+        },
+        "idd": {
+            "root": "+1",
+            "suffixes": [
+                ""
+            ]
+        },
+        "capital": [
+            "Ottawa"
+        ],
+        "altSpellings": [
+            "CA"
+        ],
+        "region": "Americas",
+        "subregion": "North America",
+        "languages": {
+            "eng": "English",
+            "fra": "French"
+        },
+        "translations": {...},
+        "latlng": [
+            60,
+            -95
+        ],
+        "landlocked": false,
+        "borders": [
+            "USA"
+        ],
+        "area": 9984670,
+        "demonyms": {
+            "eng": {
+                "f": "Canadian",
+                "m": "Canadian"
+            },
+            "fra": {
+                "f": "Canadienne",
+                "m": "Canadien"
+            }
+        },
+        "flag": "🇨🇦",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/jmEVLugreeqiZXxbA",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/1428125"
+        },
+        "population": 38005238,
+        "gini": {
+            "2017": 33.3
+        },
+        "fifa": "CAN",
+        "car": {
+            "signs": [
+                "CDN"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC-08:00",
+            "UTC-07:00",
+            "UTC-06:00",
+            "UTC-05:00",
+            "UTC-04:00",
+            "UTC-03:30"
+        ],
+        "continents": [
+            "North America"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/ca.png",
+            "svg": "https://flagcdn.com/ca.svg",
+            "alt": "The flag of Canada is composed of a red vertical band on the hoist and fly sides and a central white square that is twice the width of the vertical bands. A large eleven-pointed red maple leaf is centered in the white square."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/ca.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/ca.svg"
+        },
+        "startOfWeek": "sunday",
+        "capitalInfo": {
+            "latlng": [
+                45.42,
+                -75.7
+            ]
+        },
+        "postalCode": {
+            "format": "@#@ #@#",
+            "regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ]) ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d)$"
+        }
+    },
+    {
+        "name": {
+            "common": "Ethiopia",
+            "official": "Federal Democratic Republic of Ethiopia",
+            "nativeName": {
+                "amh": {
+                    "official": "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ",
+                    "common": "ኢትዮጵያ"
+                }
+            }
+        },
+        "tld": [
+            ".et"
+        ],
+        "cca2": "ET",
+        "ccn3": "231",
+        "cca3": "ETH",
+        "cioc": "ETH",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ETB": {
+                "name": "Ethiopian birr",
+                "symbol": "Br"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "51"
+            ]
+        },
+        "capital": [
+            "Addis Ababa"
+        ],
+        "altSpellings": [
+            "ET",
+            "ʾĪtyōṗṗyā",
+            "Federal Democratic Republic of Ethiopia",
+            "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "languages": {
+            "amh": "Amharic"
+        },
+        "translations": {...},
+        "latlng": [
+            8,
+            38
+        ],
+        "landlocked": true,
+        "borders": [
+            "DJI",
+            "ERI",
+            "KEN",
+            "SOM",
+            "SSD",
+            "SDN"
+        ],
+        "area": 1104300,
+        "demonyms": {
+            "eng": {
+                "f": "Ethiopian",
+                "m": "Ethiopian"
+            },
+            "fra": {
+                "f": "Éthiopienne",
+                "m": "Éthiopien"
+            }
+        },
+        "flag": "🇪🇹",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/2Q4hQWCbhuZLj3fG6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192800"
+        },
+        "population": 114963583,
+        "gini": {
+            "2015": 35
+        },
+        "fifa": "ETH",
+        "car": {
+            "signs": [
+                "ETH"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+03:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/et.png",
+            "svg": "https://flagcdn.com/et.svg",
+            "alt": "The flag of Ethiopia is composed of three equal horizontal bands of green, yellow and red, with the national emblem superimposed at the center of the field. The national emblem comprises a light blue circle bearing a golden-yellow pentagram with single yellow rays emanating from the angles between the points of the pentagram."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/et.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/et.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                9.03,
+                38.7
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    },
+    {
+        "name": {
+            "common": "United States",
+            "official": "United States of America",
+            "nativeName": {
+                "eng": {
+                    "official": "United States of America",
+                    "common": "United States"
+                }
+            }
+        },
+        "tld": [
+            ".us"
+        ],
+        "cca2": "US",
+        "ccn3": "840",
+        "cca3": "USA",
+        "cioc": "USA",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "USD": {
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        },
+        "idd": {
+            "root": "+1",
+            "suffixes": [...]
+        },
+        "capital": [
+            "Washington, D.C."
+        ],
+        "altSpellings": [
+            "US",
+            "USA",
+            "United States of America"
+        ],
+        "region": "Americas",
+        "subregion": "North America",
+        "languages": {
+            "eng": "English"
+        },
+        "translations": {...},
+        "latlng": [
+            38,
+            -97
+        ],
+        "landlocked": false,
+        "borders": [
+            "CAN",
+            "MEX"
+        ],
+        "area": 9372610,
+        "demonyms": {
+            "eng": {
+                "f": "American",
+                "m": "American"
+            },
+            "fra": {
+                "f": "Américaine",
+                "m": "Américain"
+            }
+        },
+        "flag": "🇺🇸",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/e8M246zY4BSjkjAv6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/148838#map=2/20.6/-85.8"
+        },
+        "population": 329484123,
+        "gini": {
+            "2018": 41.4
+        },
+        "fifa": "USA",
+        "car": {
+            "signs": [
+                "USA"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC-12:00",
+            "UTC-11:00",
+            "UTC-10:00",
+            "UTC-09:00",
+            "UTC-08:00",
+            "UTC-07:00",
+            "UTC-06:00",
+            "UTC-05:00",
+            "UTC-04:00",
+            "UTC+10:00",
+            "UTC+12:00"
+        ],
+        "continents": [
+            "North America"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/us.png",
+            "svg": "https://flagcdn.com/us.svg",
+            "alt": "The flag of the United States of America is composed of thirteen equal horizontal bands of red alternating with white. A blue rectangle, bearing fifty small five-pointed white stars arranged in nine rows where rows of six stars alternate with rows of five stars, is superimposed in the canton."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/us.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/us.svg"
+        },
+        "startOfWeek": "sunday",
+        "capitalInfo": {
+            "latlng": [
+                38.89,
+                -77.05
+            ]
+        },
+        "postalCode": {
+            "format": "#####-####",
+            "regex": "^\\d{5}(-\\d{4})?$"
+        }
+    }
+]
+```
+### Fetch Countries by Currency
+
+This section describes the API endpoint for fetching countries by their currency.
+
+### API Endpoint: Fetch Countries by Currency
+
+This endpoint retrieves data for countries that use a specific currency.
+
+- **URL**: `/currency/:currency`
+- **Method**: GET
+- **URL Params**: `currency=[string]`
+- **Success Response**: Returns a JSON array with the data of countries using the specified currency.
+- **Error Response**: If no countries are found using the specified currency, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /currency/etb
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Ethiopia",
+            "official": "Federal Democratic Republic of Ethiopia",
+            "nativeName": {
+                "amh": {
+                    "official": "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ",
+                    "common": "ኢትዮጵያ"
+                }
+            }
+        },
+        "tld": [
+            ".et"
+        ],
+        "cca2": "ET",
+        "ccn3": "231",
+        "cca3": "ETH",
+        "cioc": "ETH",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ETB": {
+                "name": "Ethiopian birr",
+                "symbol": "Br"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "51"
+            ]
+        },
+        "capital": [
+            "Addis Ababa"
+        ],
+        "altSpellings": [
+            "ET",
+            "ʾĪtyōṗṗyā",
+            "Federal Democratic Republic of Ethiopia",
+            "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "languages": {
+            "amh": "Amharic"
+        },
+        "translations": {...},
+        "latlng": [
+            8,
+            38
+        ],
+        "landlocked": true,
+        "borders": [
+            "DJI",
+            "ERI",
+            "KEN",
+            "SOM",
+            "SSD",
+            "SDN"
+        ],
+        "area": 1104300,
+        "demonyms": {
+            "eng": {
+                "f": "Ethiopian",
+                "m": "Ethiopian"
+            },
+            "fra": {
+                "f": "Éthiopienne",
+                "m": "Éthiopien"
+            }
+        },
+        "flag": "🇪🇹",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/2Q4hQWCbhuZLj3fG6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192800"
+        },
+        "population": 114963583,
+        "gini": {
+            "2015": 35
+        },
+        "fifa": "ETH",
+        "car": {
+            "signs": [
+                "ETH"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+03:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/et.png",
+            "svg": "https://flagcdn.com/et.svg",
+            "alt": "The flag of Ethiopia is composed of three equal horizontal bands of green, yellow and red, with the national emblem superimposed at the center of the field. The national emblem comprises a light blue circle bearing a golden-yellow pentagram with single yellow rays emanating from the angles between the points of the pentagram."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/et.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/et.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                9.03,
+                38.7
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    }
+]
+```
+
+### Fetch Countries by Language
+
+This section describes the API endpoint for fetching countries by their primary language.
+
+### API Endpoint: Fetch Countries by Language
+
+This endpoint retrieves data for countries where a specific language is spoken.
+
+- **URL**: `/language/:language`
+- **Method**: GET
+- **URL Params**: `language=[string]`
+- **Success Response**: Returns a JSON array with the data of countries where the specified language is spoken.
+- **Error Response**: If no countries are found where the specified language is spoken, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /language/amharic
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Ethiopia",
+            "official": "Federal Democratic Republic of Ethiopia",
+            "nativeName": {
+                "amh": {
+                    "official": "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ",
+                    "common": "ኢትዮጵያ"
+                }
+            }
+        },
+        "tld": [
+            ".et"
+        ],
+        "cca2": "ET",
+        "ccn3": "231",
+        "cca3": "ETH",
+        "cioc": "ETH",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ETB": {
+                "name": "Ethiopian birr",
+                "symbol": "Br"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "51"
+            ]
+        },
+        "capital": [
+            "Addis Ababa"
+        ],
+        "altSpellings": [
+            "ET",
+            "ʾĪtyōṗṗyā",
+            "Federal Democratic Republic of Ethiopia",
+            "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "languages": {
+            "amh": "Amharic"
+        },
+        "translations": {...},
+        "latlng": [
+            8,
+            38
+        ],
+        "landlocked": true,
+        "borders": [
+            "DJI",
+            "ERI",
+            "KEN",
+            "SOM",
+            "SSD",
+            "SDN"
+        ],
+        "area": 1104300,
+        "demonyms": {
+            "eng": {
+                "f": "Ethiopian",
+                "m": "Ethiopian"
+            },
+            "fra": {
+                "f": "Éthiopienne",
+                "m": "Éthiopien"
+            }
+        },
+        "flag": "🇪🇹",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/2Q4hQWCbhuZLj3fG6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192800"
+        },
+        "population": 114963583,
+        "gini": {
+            "2015": 35
+        },
+        "fifa": "ETH",
+        "car": {
+            "signs": [
+                "ETH"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+03:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/et.png",
+            "svg": "https://flagcdn.com/et.svg",
+            "alt": "The flag of Ethiopia is composed of three equal horizontal bands of green, yellow and red, with the national emblem superimposed at the center of the field. The national emblem comprises a light blue circle bearing a golden-yellow pentagram with single yellow rays emanating from the angles between the points of the pentagram."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/et.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/et.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                9.03,
+                38.7
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    }
+]
+```
+
+### Fetch Countries by Capital City
+
+This section describes the API endpoint for fetching countries by their capital city.
+
+### API Endpoint: Fetch Countries by Capital City
+
+This endpoint retrieves data for countries with a specific capital city.
+
+- **URL**: `/capital/:capital`
+- **Method**: GET
+- **URL Params**: `capital=[string]`
+- **Success Response**: Returns a JSON array with the data of countries with the specified capital city.
+- **Error Response**: If no countries are found with the specified capital city, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /capital/nairobi
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Kenya",
+            "official": "Republic of Kenya",
+            "nativeName": {
+                "eng": {
+                    "official": "Republic of Kenya",
+                    "common": "Kenya"
+                },
+                "swa": {
+                    "official": "Republic of Kenya",
+                    "common": "Kenya"
+                }
+            }
+        },
+        "tld": [
+            ".ke"
+        ],
+        "cca2": "KE",
+        "ccn3": "404",
+        "cca3": "KEN",
+        "cioc": "KEN",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "KES": {
+                "name": "Kenyan shilling",
+                "symbol": "Sh"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "54"
+            ]
+        },
+        "capital": [
+            "Nairobi"
+        ],
+        "altSpellings": [
+            "KE",
+            "Republic of Kenya",
+            "Jamhuri ya Kenya"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "languages": {
+            "eng": "English",
+            "swa": "Swahili"
+        },
+        "translations": {...},
+        "latlng": [
+            1,
+            38
+        ],
+        "landlocked": false,
+        "borders": [
+            "ETH",
+            "SOM",
+            "SSD",
+            "TZA",
+            "UGA"
+        ],
+        "area": 580367,
+        "demonyms": {
+            "eng": {
+                "f": "Kenyan",
+                "m": "Kenyan"
+            },
+            "fra": {
+                "f": "Kényane",
+                "m": "Kényan"
+            }
+        },
+        "flag": "🇰🇪",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/Ni9M7wcCxf8bJHLX8",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192798"
+        },
+        "population": 53771300,
+        "gini": {
+            "2015": 40.8
+        },
+        "fifa": "KEN",
+        "car": {
+            "signs": [
+                "EAK"
+            ],
+            "side": "left"
+        },
+        "timezones": [
+            "UTC+03:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/ke.png",
+            "svg": "https://flagcdn.com/ke.svg",
+            "alt": "The flag of Kenya is composed of three equal horizontal bands of black, red with white top and bottom edges, and green. An emblem comprising a red, black and white Maasai shield covering two crossed white spears is superimposed at the center of the field."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/ke.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/ke.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                -1.28,
+                36.82
+            ]
+        },
+        "postalCode": {
+            "format": "#####",
+            "regex": "^(\\d{5})$"
+        }
+    }
+]
+```
+
+### Fetch Countries by Region
+
+This section describes the API endpoint for fetching countries by their geographical region.
+
+### API Endpoint: Fetch Countries by Region
+
+This endpoint retrieves data for countries within a specific geographical region.
+
+- **URL**: `/region/:region`
+- **Method**: GET
+- **URL Params**: `region=[string]`
+- **Success Response**: Returns a JSON array with the data of countries within the specified region.
+- **Error Response**: If no countries are found within the specified region, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /region/europe
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Cyprus",
+            "official": "Republic of Cyprus",
+            "nativeName": {
+                "ell": {
+                    "official": "Δημοκρατία της Κύπρος",
+                    "common": "Κύπρος"
+                },
+                "tur": {
+                    "official": "Kıbrıs Cumhuriyeti",
+                    "common": "Kıbrıs"
+                }
+            }
+        },
+        "tld": [
+            ".cy"
+        ],
+        "cca2": "CY",
+        "ccn3": "196",
+        "cca3": "CYP",
+        "cioc": "CYP",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": [
+                "57"
+            ]
+        },
+        "capital": [
+            "Nicosia"
+        ],
+        "altSpellings": [
+            "CY",
+            "Kýpros",
+            "Kıbrıs",
+            "Republic of Cyprus",
+            "Κυπριακή Δημοκρατία",
+            "Kıbrıs Cumhuriyeti"
+        ],
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "languages": {
+            "ell": "Greek",
+            "tur": "Turkish"
+        },
+        "translations": {...},
+        "latlng": [
+            35,
+            33
+        ],
+        "landlocked": false,
+        "area": 9251,
+        "demonyms": {
+            "eng": {
+                "f": "Cypriot",
+                "m": "Cypriot"
+            },
+            "fra": {
+                "f": "Chypriote",
+                "m": "Chypriote"
+            }
+        },
+        "flag": "🇨🇾",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/77hPBRdLid8yD5Bm7",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/307787"
+        },
+        "population": 1207361,
+        "gini": {
+            "2018": 32.7
+        },
+        "fifa": "CYP",
+        "car": {
+            "signs": [
+                "CY"
+            ],
+            "side": "left"
+        },
+        "timezones": [
+            "UTC+02:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/cy.png",
+            "svg": "https://flagcdn.com/cy.svg",
+            "alt": "The flag of Cyprus has a white field, at the center of which is a copper-colored silhouette of the Island of Cyprus above two green olive branches crossed at the stem."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/cy.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/cy.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                35.17,
+                33.37
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Slovakia",
+            "official": "Slovak Republic",
+            "nativeName": {
+                "slk": {
+                    "official": "Slovenská republika",
+                    "common": "Slovensko"
+                }
+            }
+        },
+        "tld": [
+            ".sk"
+        ],
+        "cca2": "SK",
+        "ccn3": "703",
+        "cca3": "SVK",
+        "cioc": "SVK",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "idd": {
+            "root": "+4",
+            "suffixes": [
+                "21"
+            ]
+        },
+        "capital": [
+            "Bratislava"
+        ],
+        "altSpellings": [
+            "SK",
+            "Slovak Republic",
+            "Slovenská republika"
+        ],
+        "region": "Europe",
+        "subregion": "Central Europe",
+        "languages": {
+            "slk": "Slovak"
+        },
+        "translations": {...},
+        "latlng": [
+            48.66666666,
+            19.5
+        ],
+        "landlocked": true,
+        "borders": [
+            "AUT",
+            "CZE",
+            "HUN",
+            "POL",
+            "UKR"
+        ],
+        "area": 49037,
+        "demonyms": {
+            "eng": {
+                "f": "Slovak",
+                "m": "Slovak"
+            },
+            "fra": {
+                "f": "Slovaque",
+                "m": "Slovaque"
+            }
+        },
+        "flag": "🇸🇰",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/uNSH2wW4bLoZVYJj7",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/14296"
+        },
+        "population": 5458827,
+        "gini": {
+            "2018": 25
+        },
+        "fifa": "SVK",
+        "car": {
+            "signs": [
+                "SK"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+01:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/sk.png",
+            "svg": "https://flagcdn.com/sk.svg",
+            "alt": "The flag of Slovakia is composed of three equal horizontal bands of white, blue and red. The coat of arms of Slovakia is superimposed at the center of the field slightly towards the hoist side."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/sk.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/sk.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                48.15,
+                17.12
+            ]
+        },
+        "postalCode": {
+            "format": "###  ##",
+            "regex": "^(\\d{5})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Vatican City",
+            "official": "Vatican City State",
+            "nativeName": {
+                "ita": {
+                    "official": "Stato della Città del Vaticano",
+                    "common": "Vaticano"
+                },
+                "lat": {
+                    "official": "Status Civitatis Vaticanæ",
+                    "common": "Vaticanæ"
+                }
+            }
+        },
+        "tld": [
+            ".va"
+        ],
+        "cca2": "VA",
+        "ccn3": "336",
+        "cca3": "VAT",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": [
+                "906698",
+                "79"
+            ]
+        },
+        "capital": [
+            "Vatican City"
+        ],
+        "altSpellings": [
+            "VA",
+            "Holy See (Vatican City State)",
+            "Vatican City State",
+            "Stato della Città del Vaticano"
+        ],
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "languages": {
+            "ita": "Italian",
+            "lat": "Latin"
+        },
+        "translations": {...},
+        "latlng": [
+            41.9,
+            12.45
+        ],
+        "landlocked": true,
+        "borders": [
+            "ITA"
+        ],
+        "area": 0.44,
+        "demonyms": {
+            "eng": {
+                "f": "Vatican",
+                "m": "Vatican"
+            },
+            "fra": {
+                "f": "Vaticane",
+                "m": "Vatican"
+            }
+        },
+        "flag": "🇻🇦",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/DTKvw5Bd1QZaDZmE8",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/36989"
+        },
+        "population": 451,
+        "car": {
+            "signs": [
+                "V"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+01:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/va.png",
+            "svg": "https://flagcdn.com/va.svg",
+            "alt": "The flag of Vatican City is square shaped. It is composed of two equal vertical bands of yellow and white, with national coat of arms centered in the white band. The national coat of arms comprises the Papal Tiara superimposed on two crossed keys."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/va.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/va.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                41.9,
+                12.45
+            ]
+        }
+    }
+]
+```
+### Fetch Countries by Subregion
+
+This section describes the API endpoint for fetching countries by their geographical subregion.
+
+### API Endpoint: Fetch Countries by Subregion
+
+This endpoint retrieves data for countries within a specific geographical subregion.
+
+- **URL**: `/subregion/:subregion`
+- **Method**: GET
+- **URL Params**: `subregion=[string]`
+- **Success Response**: Returns a JSON array with the data of countries within the specified subregion.
+- **Error Response**: If no countries are found within the specified subregion, the API will return an error message.
+
+**Example Request:**
+
+```plaintext
+GET /subregion/western europe
+```
+
+```json
+[
+    {
+        "name": {
+            "common": "Switzerland",
+            "official": "Swiss Confederation",
+            "nativeName": {
+                "fra": {
+                    "official": "Confédération suisse",
+                    "common": "Suisse"
+                },
+                "gsw": {
+                    "official": "Schweizerische Eidgenossenschaft",
+                    "common": "Schweiz"
+                },
+                "ita": {
+                    "official": "Confederazione Svizzera",
+                    "common": "Svizzera"
+                },
+                "roh": {
+                    "official": "Confederaziun svizra",
+                    "common": "Svizra"
+                }
+            }
+        },
+        "tld": [
+            ".ch"
+        ],
+        "cca2": "CH",
+        "ccn3": "756",
+        "cca3": "CHE",
+        "cioc": "SUI",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "CHF": {
+                "name": "Swiss franc",
+                "symbol": "Fr."
+            }
+        },
+        "idd": {
+            "root": "+4",
+            "suffixes": [
+                "1"
+            ]
+        },
+        "capital": [
+            "Bern"
+        ],
+        "altSpellings": [
+            "CH",
+            "Swiss Confederation",
+            "Schweiz",
+            "Suisse",
+            "Svizzera",
+            "Svizra"
+        ],
+        "region": "Europe",
+        "subregion": "Western Europe",
+        "languages": {
+            "fra": "French",
+            "gsw": "Swiss German",
+            "ita": "Italian",
+            "roh": "Romansh"
+        },
+        "translations": {...},
+        "latlng": [
+            47,
+            8
+        ],
+        "landlocked": true,
+        "borders": [
+            "AUT",
+            "FRA",
+            "ITA",
+            "LIE",
+            "DEU"
+        ],
+        "area": 41284,
+        "demonyms": {
+            "eng": {
+                "f": "Swiss",
+                "m": "Swiss"
+            },
+            "fra": {
+                "f": "Suisse",
+                "m": "Suisse"
+            }
+        },
+        "flag": "🇨🇭",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/uVuZcXaxSx5jLyEC9",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/51701"
+        },
+        "population": 8654622,
+        "gini": {
+            "2018": 33.1
+        },
+        "fifa": "SUI",
+        "car": {
+            "signs": [
+                "CH"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+01:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/ch.png",
+            "svg": "https://flagcdn.com/ch.svg",
+            "alt": "The flag of Switzerland is square shaped. It features a white Swiss cross centered on a red field."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/ch.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/ch.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                46.92,
+                7.47
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Luxembourg",
+            "official": "Grand Duchy of Luxembourg",
+            "nativeName": {
+                "deu": {
+                    "official": "Großherzogtum Luxemburg",
+                    "common": "Luxemburg"
+                },
+                "fra": {
+                    "official": "Grand-Duché de Luxembourg",
+                    "common": "Luxembourg"
+                },
+                "ltz": {
+                    "official": "Groussherzogtum Lëtzebuerg",
+                    "common": "Lëtzebuerg"
+                }
+            }
+        },
+        "tld": [
+            ".lu"
+        ],
+        "cca2": "LU",
+        "ccn3": "442",
+        "cca3": "LUX",
+        "cioc": "LUX",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": [
+                "52"
+            ]
+        },
+        "capital": [
+            "Luxembourg"
+        ],
+        "altSpellings": [
+            "LU",
+            "Grand Duchy of Luxembourg",
+            "Grand-Duché de Luxembourg",
+            "Großherzogtum Luxemburg",
+            "Groussherzogtum Lëtzebuerg"
+        ],
+        "region": "Europe",
+        "subregion": "Western Europe",
+        "languages": {
+            "deu": "German",
+            "fra": "French",
+            "ltz": "Luxembourgish"
+        },
+        "translations": {...},
+        "latlng": [
+            49.75,
+            6.16666666
+        ],
+        "landlocked": true,
+        "borders": [
+            "BEL",
+            "FRA",
+            "DEU"
+        ],
+        "area": 2586,
+        "demonyms": {
+            "eng": {
+                "f": "Luxembourger",
+                "m": "Luxembourger"
+            },
+            "fra": {
+                "f": "Luxembourgeoise",
+                "m": "Luxembourgeois"
+            }
+        },
+        "flag": "🇱🇺",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/L6b2AgndgHprt2Ko9",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/2171347#map=10/49.8167/6.1335"
+        },
+        "population": 632275,
+        "gini": {
+            "2018": 35.4
+        },
+        "fifa": "LUX",
+        "car": {
+            "signs": [
+                "L"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+01:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/lu.png",
+            "svg": "https://flagcdn.com/lu.svg",
+            "alt": "The flag of Luxembourg is composed of three equal horizontal bands of red, white and light blue."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/lu.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/lu.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                49.6,
+                6.12
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    },
+]
+```
+
+
+
