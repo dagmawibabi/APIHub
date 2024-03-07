@@ -110,7 +110,7 @@ app.get("/todos", async (c) => {
     return c.json(result.data)
 })
 
-//* FETCH ALL TODOS WITH PAGINATION
+//* FETCH ALL USERS
 app.get("/users", async (c) => {
     let result = await axios.get(`https://jsonplaceholder.typicode.com/users`)
     return c.json(result.data)
