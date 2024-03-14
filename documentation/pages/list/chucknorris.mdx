@@ -1,0 +1,133 @@
+# 🥋 Chuck Norris API
+
+All routes for the Chuck Norris API start with `/jokes`.
+
+## Introduction
+
+- **URL**: `/`
+- **Method**: GET
+- **Response**: Returns a welcome message.
+
+**Example Request:**
+```plaintext
+GET /
+```
+
+```plaintext
+Welcome to the Chuck Norris API service! Use the following endpoints to access country data:
+- Fetch a random joke: /jokes/random
+- Fetch all joke categories: /jokes/categories
+- Fetch a random joke by category: /jokes/random/:category
+- Search for a joke: /jokes/search/:query
+```
+
+## Fetch Random Joke
+
+- **URL**: `/jokes/random`
+- **Method**: GET
+- **Response**: Returns a JSON object with a random joke.
+
+**Example Request:**
+```plaintext
+GET /jokes/random
+```
+
+```json
+{
+    "categories": [],
+    "created_at": "2020-01-05 13:42:27.496799",
+    "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+    "id": "XBERxVy7TQWwIRML5IP1QQ",
+    "updated_at": "2020-01-05 13:42:27.496799",
+    "url": "https://api.chucknorris.io/jokes/XBERxVy7TQWwIRML5IP1QQ",
+    "value": "Chuck Norris can retract his beard, wolverine-style, at will. It makes that metallic sound and everything."
+}
+```
+
+## Fetch All Categories
+
+- **URL**: `/jokes/categories`
+- **Method**: GET
+- **Response**: Returns a JSON array with all joke categories.
+
+**Example Request:**
+```plaintext
+GET /jokes/categories
+```
+```json
+[
+    "animal",
+    "career",
+    "celebrity",
+    "dev",
+    "explicit",
+    "fashion",
+    "food",
+    "history",
+    "money",
+    "movie",
+    "music",
+    "political",
+    "religion",
+    "science",
+    "sport",
+    "travel"
+]
+```
+
+## Fetch Random Joke by Category
+
+- **URL**: `/jokes/random/:category`
+- **Method**: GET
+- **URL Params**: `category=[string]`
+- **Response**: Returns a JSON object with a random joke from the specified category.
+
+**Example Request:**
+```plaintext
+GET /jokes/random/food
+```
+
+```json
+{
+    "categories": [
+        "food"
+    ],
+    "created_at": "2020-01-05 13:42:19.576875",
+    "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+    "id": "o-c_rdw5sweexosfwefcpg",
+    "updated_at": "2020-01-05 13:42:19.576875",
+    "url": "https://api.chucknorris.io/jokes/o-c_rdw5sweexosfwefcpg",
+    "value": "Most tough men eat nails for breakfast. Chuck Norris does all of his grocery shopping at Home Depot."
+}
+```
+
+## Search Joke
+
+- **URL**: `/jokes/search/:query`
+- **Method**: GET
+- **URL Params**: `query=[string]`
+- **Response**: Returns a JSON object with jokes that match the query.
+
+**Example Request:**
+```plaintext
+GET /jokes/search/programming
+```
+
+```json
+{
+    "total": 1,
+    "result": [
+        {
+            "categories": [
+                "dev"
+            ],
+            "created_at": "2020-01-05 13:42:19.324003",
+            "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+            "id": "2nd0jxvvqnwpvagswww-lg",
+            "updated_at": "2020-01-05 13:42:19.324003",
+            "url": "https://api.chucknorris.io/jokes/2nd0jxvvqnwpvagswww-lg",
+            "value": "Chuck Norris insists on strongly-typed programming languages."
+        }
+    ]
+}
+```
