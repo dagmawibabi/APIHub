@@ -29,6 +29,7 @@ import restcountries from "./routes/restcountries";
 import newyorktimes from "./routes/newyorktimes";
 import randomUser from "./routes/randomuser";
 import youtube from "./routes/youtube"
+import chucknorris from "./routes/chucknorris"
 
 
 //* ENDPOINTS
@@ -50,6 +51,7 @@ app.route('/restcountries', restcountries) // REST Countries
 app.route("/nytimes", newyorktimes) // New York Times
 app.route('/randomuser', randomUser) // Random User
 app.route('/youtube',youtube) // Youtube
+app.route('/chucknorris',chucknorris) // Youtube
 
 
 //* ERROR HANDLING
