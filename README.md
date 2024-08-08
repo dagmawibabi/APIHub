@@ -4,7 +4,7 @@ So I use a lot of free and open API's all the time for random apps, experiments 
 
 So I decided to make APIHub, a parent API to all other APIs. I don't have to relearn end-points, dig through their documentations, convert responses to JSON and go through the hassle anymore. I only have to learn this one API and that's it! 🥳
 
-[Try it here](https://apihub-8d80.onrender.com)
+[Try it here](https://apihub-8d80.onrender.com) or get started [reading the documentation](apihub-seven.vercel.app)
 
 ## Best Features
 
