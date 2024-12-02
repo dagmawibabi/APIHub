@@ -32,6 +32,7 @@ import newyorktimes from "./routes/newyorktimes";
 import randomUser from "./routes/randomuser";
 import youtube from "./routes/youtube";
 import chucknorris from "./routes/chucknorris";
+import tvmaze from "./routes/tvmaze";
 
 //* ENDPOINTS
 app.route("/github", github); // GitHub
@@ -53,6 +54,7 @@ app.route("/nytimes", newyorktimes); // New York Times
 app.route("/randomuser", randomUser); // Random User
 app.route("/youtube", youtube); // Youtube
 app.route("/chucknorris", chucknorris); // Youtube
+app.route("/tvmaze", tvmaze); // TVMaze
 
 //* ERROR HANDLING
 app.onError((err, c) => {
