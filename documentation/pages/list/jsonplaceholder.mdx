@@ -1,0 +1,581 @@
+## 👤JSON Placeholder API
+
+All routes for jsonplaceholder starts with /jsonplaceholder
+
+### Fetch All Posts
+
+Retrieves all posts.
+
+- **URL**: `/jsonplaceholder/posts`
+- **Method**: GET
+- **Response**: Returns a JSON array with all (100) posts.
+
+**Example Request:**
+
+```plaintext
+GET /jsonplaceholder/posts
+```
+
+```json
+{
+    [
+        {
+            "userId": 1,
+            "id": 1,
+            "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+            "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "qui est esse",
+            "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+        },
+    ]
+}
+```
+
+### Fetch All Posts with Pagination
+
+Retrieves all posts with pagination.
+
+- **URL**: `/posts/:page?/:limit?`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (optional): The page number. Defaults to 1.
+  - `limit` (optional): The number of posts per page. Defaults to 5.
+- **Response**: Returns a JSON array with the posts for the specified page.
+
+**Example Request:**
+
+```plaintext
+GET /posts/5/2
+```
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "nesciunt iure omnis dolorem tempora et accusantium",
+    "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "optio molestias id quia eum",
+    "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+  }
+]
+```
+
+### Fetch a Single Post
+
+Retrieves a single post by ID.
+
+- **URL**: `/post/:id`
+- **Method**: GET
+- **URL Parameters**:
+  - `id` (required): The ID of the post to retrieve.
+- **Response**: Returns a JSON object with the specified post.
+
+**Example Request:**
+
+```plaintext
+GET /post/1
+```
+
+```json
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+```
+
+### Fetch All Comments
+
+Retrieves all comments.
+
+- **URL**: `/comments`
+- **Method**: GET
+- **Response**: Returns a JSON array with all comments.
+
+**Example Request:**
+
+```plaintext
+GET /comments
+```
+
+```json
+[
+    {
+        "postId": 1,
+        "id": 1,
+        "name": "id labore ex et quam laborum",
+        "email": "Eliseo@gardner.biz",
+        "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    },
+    {
+        "postId": 1,
+        "id": 2,
+        "name": "quo vero reiciendis velit similique earum",
+        "email": "Jayne_Kuhic@sydney.com",
+        "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+    },
+]
+```
+
+### Fetch All Albums
+
+Retrieves all albums.
+
+- **URL**: `/jsonplaceholder/albums`
+- **Method**: GET
+- **Response**: Returns a JSON array with all (100) albums.
+
+**Example Request:**
+
+```plaintext
+GET /jsonplaceholder/albums
+```
+
+```json
+{
+   [
+        {
+            "userId": 1,
+            "id": 1,
+            "title": "quidem molestiae enim"
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "sunt qui excepturi placeat culpa"
+        },
+   ]
+}
+```
+
+### Fetch All Albums with Pagination
+
+Retrieves all albums with pagination.
+
+- **URL**: `/albums/:page?/:limit?`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (optional): The page number. Defaults to 1.
+  - `limit` (optional): The number of albums per page. Defaults to 5.
+- **Response**: Returns a JSON array with the albums for the specified page.
+
+**Example Request:**
+
+```plaintext
+GET /albums/5/2
+```
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "saepe unde necessitatibus rem"
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "distinctio laborum qui"
+  }
+]
+```
+
+### Fetch a Single Album
+
+Retrieves a single album by ID.
+
+- **URL**: `/album/:id`
+- **Method**: GET
+- **URL Parameters**:
+  - `id` (required): The ID of the album to retrieve.
+- **Response**: Returns a JSON object with the specified album.
+
+**Example Request:**
+
+```plaintext
+GET /album/2
+```
+
+```json
+{
+  "userId": 1,
+  "id": 2,
+  "title": "sunt qui excepturi placeat culpa"
+}
+```
+
+### Fetch All Photos
+
+Retrieves all photos.
+
+- **URL**: `/jsonplaceholder/photos`
+- **Method**: GET
+- **Response**: Returns a JSON array with all (100) photos.
+
+**Example Request:**
+
+```plaintext
+GET /jsonplaceholder/photos
+```
+
+```json
+[
+    {
+        "albumId": 1,
+        "id": 1,
+        "title": "accusamus beatae ad facilis cum similique qui sunt",
+        "url": "https://via.placeholder.com/600/92c952",
+        "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+    },
+    {
+        "albumId": 1,
+        "id": 2,
+        "title": "reprehenderit est deserunt velit ipsam",
+        "url": "https://via.placeholder.com/600/771796",
+        "thumbnailUrl": "https://via.placeholder.com/150/771796"
+    },
+]
+```
+
+### Fetch All Photos with Pagination
+
+Retrieves all photos with pagination.
+
+- **URL**: `/photos/:page?/:limit?`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (optional): The page number. Defaults to 1.
+  - `limit` (optional): The number of photos per page. Defaults to 5.
+- **Response**: Returns a JSON array with the photos for the specified page.
+
+**Example Request:**
+
+```plaintext
+GET /photos/5/2
+```
+
+```json
+[
+    {
+        "albumId": 1,
+        "id": 9,
+        "title": "qui eius qui autem sed",
+        "url": "https://via.placeholder.com/600/51aa97",
+        "thumbnailUrl": "https://via.placeholder.com/150/51aa97"
+    },
+    {
+        "albumId": 1,
+        "id": 10,
+        "title": "beatae et provident et ut vel",
+        "url": "https://via.placeholder.com/600/810b14",
+        "thumbnailUrl": "https://via.placeholder.com/150/810b14"
+    }
+]
+```
+
+### Fetch a Single Photo
+
+Retrieves a single photo by ID.
+
+- **URL**: `/photo/:id`
+- **Method**: GET
+- **URL Parameters**:
+  - `id` (required): The ID of the photo to retrieve.
+- **Response**: Returns a JSON object with the specified photo.
+
+**Example Request:**
+
+```plaintext
+GET /photo/2
+```
+
+```json
+{
+    "albumId": 1,
+    "id": 2,
+    "title": "reprehenderit est deserunt velit ipsam",
+    "url": "https://via.placeholder.com/600/771796",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+}
+```
+
+### Fetch All Todos
+
+Retrieves all todos.
+
+- **URL**: `/jsonplaceholder/todos`
+- **Method**: GET
+- **Response**: Returns a JSON array with all (100) todos.
+
+**Example Request:**
+
+```plaintext
+GET /jsonplaceholder/todos
+```
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "delectus aut autem",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+    "completed": false
+  }
+]
+```
+
+### Fetch All Users
+
+Retrieves all users.
+
+- **URL**: `/jsonplaceholder/users`
+- **Method**: GET
+- **Response**: Returns a JSON array with all (100) users.
+
+**Example Request:**
+
+```plaintext
+GET /jsonplaceholder/users
+```
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Ervin Howell",
+        "username": "Antonette",
+        "email": "Shanna@melissa.tv",
+        "address": {
+            "street": "Victor Plains",
+            "suite": "Suite 879",
+            "city": "Wisokyburgh",
+            "zipcode": "90566-7771",
+            "geo": {
+                "lat": "-43.9509",
+                "lng": "-34.4618"
+            }
+        },
+        "phone": "010-692-6593 x09125",
+        "website": "anastasia.net",
+        "company": {
+            "name": "Deckow-Crist",
+            "catchPhrase": "Proactive didactic contingency",
+            "bs": "synergize scalable supply-chains"
+        }
+    }
+]
+```
+
+### Fetch All Users with Pagination
+
+Retrieves all users with pagination.
+
+- **URL**: `/users/:page?/:limit?`
+- **Method**: GET
+- **URL Parameters**:
+  - `page` (optional): The page number. Defaults to 1.
+  - `limit` (optional): The number of users per page. Defaults to 5.
+- **Response**: Returns a JSON array with the users for the specified page.
+
+**Example Request:**
+
+```plaintext
+GET /users/5/2
+```
+
+```json
+[
+  {
+    "id": 9,
+    "name": "Glenna Reichert",
+    "username": "Delphine",
+    "email": "Chaim_McDermott@dana.io",
+    "address": {
+      "street": "Dayna Park",
+      "suite": "Suite 449",
+      "city": "Bartholomebury",
+      "zipcode": "76495-3109",
+      "geo": {
+        "lat": "24.6463",
+        "lng": "-168.8889"
+      }
+    },
+    "phone": "(775)976-6794 x41206",
+    "website": "conrad.com",
+    "company": {
+      "name": "Yost and Sons",
+      "catchPhrase": "Switchable contextually-based project",
+      "bs": "aggregate real-time technologies"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Clementina DuBuque",
+    "username": "Moriah.Stanton",
+    "email": "Rey.Padberg@karina.biz",
+    "address": {
+      "street": "Kattie Turnpike",
+      "suite": "Suite 198",
+      "city": "Lebsackbury",
+      "zipcode": "31428-2261",
+      "geo": {
+        "lat": "-38.2386",
+        "lng": "57.2232"
+      }
+    },
+    "phone": "024-648-3804",
+    "website": "ambrose.net",
+    "company": {
+      "name": "Hoeger LLC",
+      "catchPhrase": "Centralized empowering task-force",
+      "bs": "target end-to-end models"
+    }
+  }
+]
+```
+
+### Fetch a Single User
+
+Retrieves a single user by ID.
+
+- **URL**: `/user/:id`
+- **Method**: GET
+- **URL Parameters**:
+  - `id` (required): The ID of the user to retrieve.
+- **Response**: Returns a JSON object with the specified user.
+
+**Example Request:**
+
+```plaintext
+GET /user/2
+```
+
+```json
+{
+  "id": 2,
+  "name": "Ervin Howell",
+  "username": "Antonette",
+  "email": "Shanna@melissa.tv",
+  "address": {
+    "street": "Victor Plains",
+    "suite": "Suite 879",
+    "city": "Wisokyburgh",
+    "zipcode": "90566-7771",
+    "geo": {
+      "lat": "-43.9509",
+      "lng": "-34.4618"
+    }
+  },
+  "phone": "010-692-6593 x09125",
+  "website": "anastasia.net",
+  "company": {
+    "name": "Deckow-Crist",
+    "catchPhrase": "Proactive didactic contingency",
+    "bs": "synergize scalable supply-chains"
+  }
+}
+```
+
+### Fetch a Single User's Posts
+
+Retrieves all posts from a specific user.
+
+- **URL**: `/user/:id/posts`
+- **Method**: GET
+- **URL Parameters**:
+  - `id` (required): The ID of the user whose posts to retrieve.
+- **Response**: Returns a JSON array with all posts from the specified user.
+
+**Example Request:**
+
+```plaintext
+GET /user/1/posts
+```
+
+```json
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    },
+    {
+        "userId": 1,
+        "id": 2,
+        "title": "qui est esse",
+        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+    }
+]
+```
+
+### Fetch a Single User's Todos
+
+Retrieves all todos from a specific user.
+
+- **URL**: `/user/:id/todos`
+- **Method**: GET
+- **URL Parameters**:
+  - `id` (required): The ID of the user whose todos to retrieve.
+- **Response**: Returns a JSON array with all todos from the specified user.
+
+**Example Request:**
+
+```plaintext
+GET /user/1/todos
+```
+```json
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "delectus aut autem",
+        "completed": false
+    },
+    {
+        "userId": 1,
+        "id": 2,
+        "title": "quis ut nam facilis et officia qui",
+        "completed": false
+    }
+]
+```
