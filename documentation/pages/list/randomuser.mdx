@@ -1,0 +1,720 @@
+## 👤 RandomUser API
+
+All routes for the RandomUser API start with `/`.
+
+---
+
+## Introduction
+
+Retrieves information about the available routes and their purpose.
+
+- **URL**: `/`
+- **Method**: GET
+- **Response**: Returns a welcome message explaining the available endpoints.
+
+```json
+{
+  "message": "Welcome to the RandomUser API route. Use /user to get random user data."
+}
+
+```
+---
+
+## Get a Random User
+
+Fetches a random user's data.
+
+- **URL**: `/user`
+- **Method**: GET
+- **Response**: A JSON object containing a random user's data.
+
+```json
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Leon",
+        "last": "Fox"
+      },
+      "location": {
+        "street": {
+          "number": 142,
+          "name": "Karen Dr"
+        },
+        "city": "Oxnard",
+        "state": "Arizona",
+        "country": "United States",
+        "postcode": 85527,
+        "coordinates": {
+          "latitude": "88.4855",
+          "longitude": "-172.4943"
+        },
+        "timezone": {
+          "offset": "-8:00",
+          "description": "Pacific Time (US & Canada)"
+        }
+      },
+      "email": "leon.fox@example.com",
+      "login": {
+        "uuid": "94206a0d-e847-440e-b7b2-6ccceeb1d041",
+        "username": "sadcat461",
+        "password": "julia",
+        "salt": "6FsDrb5R",
+        "md5": "33785feb727d8389a88080ef39f682c5",
+        "sha1": "9272828ca60aff2741b626bd91962223d1b5c861",
+        "sha256": "ca797165d42c0135958224129bda83f305163c6cf04e04e3bc46fd62434e6cf9"
+      },
+      "dob": {
+        "date": "1989-03-03T01:42:19.477Z",
+        "age": 35
+      },
+      "registered": {
+        "date": "2018-07-04T17:55:22.507Z",
+        "age": 6
+      },
+      "phone": "(997) 280-2002",
+      "cell": "(755) 852-4693",
+      "id": {
+        "name": "SSN",
+        "value": "092-11-4182"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/77.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/77.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/77.jpg"
+      },
+      "nat": "US"
+    }
+  ],
+  "info": {
+    "seed": "4906fc3e893a9c5b",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Get Simplified Random User Data
+
+Fetches a random user's data excluding metadata like seed, results, page, and version.
+
+- **URL**: `/user/data`
+- **Method**: GET
+- **Response**: A JSON object containing a simplified random user's data.
+
+```json
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Joona",
+        "last": "Jarvinen"
+      },
+      "location": {
+        "street": {
+          "number": 8243,
+          "name": "Satakennankatu"
+        },
+        "city": "Virrat",
+        "state": "Lapland",
+        "country": "Finland",
+        "postcode": 56602,
+        "coordinates": {
+          "latitude": "-25.0276",
+          "longitude": "-144.4719"
+        },
+        "timezone": {
+          "offset": "+6:00",
+          "description": "Almaty, Dhaka, Colombo"
+        }
+      },
+      "email": "joona.jarvinen@example.com",
+      "login": {
+        "uuid": "53cdcf48-dc08-4582-be02-a6589ac0787e",
+        "username": "angrydog683",
+        "password": "topper",
+        "salt": "ZUaGwGkn",
+        "md5": "b91bb89292f2e2ee2289c73e6dfe4456",
+        "sha1": "5a9a2f06f2d457c2585cad7ba5d436c990252a17",
+        "sha256": "77a90a3462a3f15ad7506a31581483783108f86e31c8a942bcc4eb8d33baad08"
+      },
+      "dob": {
+        "date": "1966-08-30T15:14:24.078Z",
+        "age": 58
+      },
+      "registered": {
+        "date": "2009-03-08T06:07:04.654Z",
+        "age": 15
+      },
+      "phone": "06-670-454",
+      "cell": "048-395-35-15",
+      "id": {
+        "name": "HETU",
+        "value": "NaNNA761undefined"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/53.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/53.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/53.jpg"
+      },
+      "nat": "FI"
+    }
+  ]
+}
+
+```
+---
+
+## Get Multiple Random Users
+
+Fetches multiple random users based on the specified count.
+
+- **URL**: `/users/:count`
+- **Method**: GET
+- **URL Parameters**:
+    - count (required): The number of users to retrieve
+- **Response**: A JSON array containing multiple random users.
+
+```json
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Anel",
+        "last": "Zúñiga"
+      },
+      "location": {
+        "street": {
+          "number": 3463,
+          "name": "Avenida Riojas"
+        },
+        "city": "Matías Romero",
+        "state": "Baja California Sur",
+        "country": "Mexico",
+        "postcode": 57842,
+        "coordinates": {
+          "latitude": "28.4443",
+          "longitude": "0.0966"
+        },
+        "timezone": {
+          "offset": "+9:00",
+          "description": "Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+        }
+      },
+      "email": "anel.zuniga@example.com",
+      "login": {
+        "uuid": "1f5e5171-80cb-4526-8fb4-2ea48583696c",
+        "username": "browncat893",
+        "password": "pisces",
+        "salt": "bWUujAV9",
+        "md5": "f8bf3d9723a432b12d617d4c3ec42ae6",
+        "sha1": "29309675a659dc3d1ab478760617feb93708202b",
+        "sha256": "c648f3d759d5ca431ab46c940e1d1bb04961c7cdbe4d59cbb8de789a174daaa5"
+      },
+      "dob": {
+        "date": "1980-09-14T19:45:18.229Z",
+        "age": 44
+      },
+      "registered": {
+        "date": "2007-11-20T03:08:10.295Z",
+        "age": 17
+      },
+      "phone": "(635) 136 3807",
+      "cell": "(690) 230 0170",
+      "id": {
+        "name": "NSS",
+        "value": "51 55 71 5615 9"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/49.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/49.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/49.jpg"
+      },
+      "nat": "MX"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Miss",
+        "first": "Alma",
+        "last": "Rico"
+      },
+      "location": {
+        "street": {
+          "number": 439,
+          "name": "Calle Zimbabwe"
+        },
+        "city": "Ciudad Acuña",
+        "state": "Baja California Sur",
+        "country": "Mexico",
+        "postcode": 30271,
+        "coordinates": {
+          "latitude": "-84.7418",
+          "longitude": "107.2090"
+        },
+        "timezone": {
+          "offset": "-8:00",
+          "description": "Pacific Time (US & Canada)"
+        }
+      },
+      "email": "alma.rico@example.com",
+      "login": {
+        "uuid": "f035101c-1829-49b2-8a29-fac0b4203213",
+        "username": "purplewolf164",
+        "password": "pooppoop",
+        "salt": "3dtGoNLI",
+        "md5": "ee467781a04c6416bc4c27da9eac65ea",
+        "sha1": "d3c22f86f510c71cc0f77cd098ccbc03de649ee3",
+        "sha256": "858b68a378cf63cd8693856c4dc212141af5b0cb4a0fae8b3a9526f358f80a67"
+      },
+      "dob": {
+        "date": "1991-05-15T04:50:00.707Z",
+        "age": 33
+      },
+      "registered": {
+        "date": "2021-09-29T22:27:32.188Z",
+        "age": 3
+      },
+      "phone": "(618) 871 6397",
+      "cell": "(691) 448 9484",
+      "id": {
+        "name": "NSS",
+        "value": "97 51 70 0786 4"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/39.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/39.jpg"
+      },
+      "nat": "MX"
+    }
+  ],
+  "info": {
+    "seed": "3f7d6dd1ba226173",
+    "results": 2,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Get Random User by Gender
+
+Fetches a random user's data filtered by gender.
+
+- **URL**: `/users/:gender`
+- **Method**: GET
+- **URL Parameters**:
+    - gender (required): The gender of the user (male or female).
+- **Response**: A JSON object containing a random user's data filtered by gender.
+
+```json
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mademoiselle",
+        "first": "Helga",
+        "last": "Laurent"
+      },
+      "location": {
+        "street": {
+          "number": 1862,
+          "name": "Rue Docteur-Bonhomme"
+        },
+        "city": "Walkringen",
+        "state": "Ticino",
+        "country": "Switzerland",
+        "postcode": 8709,
+        "coordinates": {
+          "latitude": "-58.8046",
+          "longitude": "-34.3414"
+        },
+        "timezone": {
+          "offset": "+4:30",
+          "description": "Kabul"
+        }
+      },
+      "email": "helga.laurent@example.com",
+      "login": {
+        "uuid": "7ba2bfce-d0a9-41f1-abe3-421f0d395fa1",
+        "username": "tinyelephant348",
+        "password": "platypus",
+        "salt": "1bPKg7hO",
+        "md5": "6a490e50e7651c3db55e947bbc3fcd3c",
+        "sha1": "d00593af19612eebc193b45f2fb76e215194c5f7",
+        "sha256": "62bbd4c7481561f65a0e2d4aacb962db999f453024ed5180d8f7790205becc25"
+      },
+      "dob": {
+        "date": "1951-12-08T19:55:11.788Z",
+        "age": 73
+      },
+      "registered": {
+        "date": "2004-03-07T16:01:23.547Z",
+        "age": 20
+      },
+      "phone": "075 539 60 46",
+      "cell": "077 911 30 16",
+      "id": {
+        "name": "AVS",
+        "value": "756.8147.1354.64"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/95.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/95.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/95.jpg"
+      },
+      "nat": "CH"
+    }
+  ],
+  "info": {
+    "seed": "d3f1399301b32829",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Get Random User by Nationality
+
+Fetches a random user's data filtered by nationality.
+
+- **URL**: `/users/:nat`
+- **Method**: GET
+- **URL Parameters**:
+    - nat (required): The nationality code (e.g, us, gb).
+- **Response**: A JSON object containing a random user's data filtered by nationality.
+
+```json
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Aurélien",
+        "last": "Adam"
+      },
+      "location": {
+        "street": {
+          "number": 1989,
+          "name": "Place du 22 Novembre 1943"
+        },
+        "city": "Toulon",
+        "state": "Hautes-Pyrénées",
+        "country": "France",
+        "postcode": 47496,
+        "coordinates": {
+          "latitude": "-18.4151",
+          "longitude": "-114.9706"
+        },
+        "timezone": {
+          "offset": "-2:00",
+          "description": "Mid-Atlantic"
+        }
+      },
+      "email": "aurelien.adam@example.com",
+      "login": {
+        "uuid": "10634e76-6ad2-44e5-adb7-ef4c5808d721",
+        "username": "sadkoala904",
+        "password": "square",
+        "salt": "zN1kr6ul",
+        "md5": "a63ea3d489a49c9f1d0038ca926f4ef0",
+        "sha1": "cc2e40e14e1daeed651e6c5c5179a9dafc568848",
+        "sha256": "53ad369cc3130b2634db3cba10bc67e1c7f4ff0d55ad979d297df41ca0255236"
+      },
+      "dob": {
+        "date": "1999-12-23T19:07:50.503Z",
+        "age": 24
+      },
+      "registered": {
+        "date": "2007-08-22T18:43:06.514Z",
+        "age": 17
+      },
+      "phone": "02-50-58-41-17",
+      "cell": "06-46-40-39-14",
+      "id": {
+        "name": "INSEE",
+        "value": "1991194630196 25"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/79.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/79.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/79.jpg"
+      },
+      "nat": "FR"
+    }
+  ],
+  "info": {
+    "seed": "2a0dc0f9fa0b032e",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Exclude Specific User Data
+
+Fetches a random user's data excluding specific fields.
+
+- **URL**: `/exclude/:exclude`
+- **Method**: GET
+- **URL Parameters**:
+    - exclude (required): The fields to exclude (comma-separated, e.g., email,phone).
+- **Response**: A JSON object with the specified fields excluded.
+
+```json
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Aitor",
+        "last": "Lorenzo"
+      },
+      "email": "aitor.lorenzo@example.com",
+      "login": {
+        "uuid": "07df4c8f-999f-40fc-97f1-6170ff2e34ce",
+        "username": "whitebutterfly446",
+        "password": "honda",
+        "salt": "KKL9b8Xe",
+        "md5": "b1d6966165f34ea9fd5f722022ffd0b7",
+        "sha1": "ad0c48283930ed9868c488dcbf716d5dd8dcae03",
+        "sha256": "f5970c13a7a750f005c8528be9b96d237187c24e5d74af5f401786c7c4ef7cef"
+      },
+      "phone": "999-182-289",
+      "cell": "653-131-102",
+      "id": {
+        "name": "DNI",
+        "value": "71807862-B"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/3.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/3.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/3.jpg"
+      },
+      "nat": "ES"
+    }
+  ],
+  "info": {
+    "seed": "e3325c25f94a79b0",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Include Specific User Data
+
+Fetches a random user's data including only specific fields.
+
+- **URL**: `/include/:include`
+- **Method**: GET
+- **URL Parameters**:
+    - include (required): The fields to include (comma-separated, e.g., email,phone).
+- **Response**: A JSON object containing only the specified fields.
+
+```json
+{
+  "results": [
+    {
+      "name": {
+        "title": "Miss",
+        "first": "Barbara",
+        "last": "Morrison"
+      },
+      "email": "barbara.morrison@example.com",
+      "phone": "015242 86070"
+    }
+  ],
+  "info": {
+    "seed": "b8ebeaf633996b21",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Specify Data Format
+
+Fetches a random user's data in a specified format.
+
+- **URL**: `/format/:format`
+- **Method**: GET
+- **URL Parameters**:
+    - format (required): The format (json or pretty).
+- **Response**: A JSON object containing the user data in the specified format.
+```json
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Sarah",
+        "last": "Rogers"
+      },
+      "location": {
+        "street": {
+          "number": 4007,
+          "name": "Park Road"
+        },
+        "city": "Roscrea",
+        "state": "Longford",
+        "country": "Ireland",
+        "postcode": 79459,
+        "coordinates": {
+          "latitude": "1.3809",
+          "longitude": "152.5548"
+        },
+        "timezone": {
+          "offset": "-11:00",
+          "description": "Midway Island, Samoa"
+        }
+      },
+      "email": "sarah.rogers@example.com",
+      "login": {
+        "uuid": "dc516ac9-c1da-494f-b120-46b401f5eb96",
+        "username": "angryfish473",
+        "password": "blueblue",
+        "salt": "fYPJr0ph",
+        "md5": "9c29f48fbefc2eb0ec039abee851ce29",
+        "sha1": "34f6ad891c66c5fcd19dd72b23ee8615a5da5783",
+        "sha256": "b65a67b3f145ee917b9952d56edb1a46040520db76fbd51f312fd9c2a12782ee"
+      },
+      "dob": {
+        "date": "1987-01-13T18:01:12.751Z",
+        "age": 37
+      },
+      "registered": {
+        "date": "2007-12-06T20:16:32.719Z",
+        "age": 17
+      },
+      "phone": "011-939-7541",
+      "cell": "081-836-2688",
+      "id": {
+        "name": "PPS",
+        "value": "4996256T"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/1.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/1.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/1.jpg"
+      },
+      "nat": "IE"
+    }
+  ],
+  "info": {
+    "seed": "851c32dc0c02185e",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+```
+---
+
+## Specify Password Strength
+
+Fetches a random user's data with a password of specified strength.
+
+- **URL**: `/password/:password`
+- **Method**: GET
+- **URL Parameters**:
+    - password (required): Password strength specification (e.g., upper,lower,number).
+- **Response**: A JSON object containing the user data  with the specified password strength.
+```json
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Andrés",
+        "last": "Arias"
+      },
+      "location": {
+        "street": {
+          "number": 9199,
+          "name": "Ronda de Toledo"
+        },
+        "city": "Sevilla",
+        "state": "Castilla y León",
+        "country": "Spain",
+        "postcode": 33370,
+        "coordinates": {
+          "latitude": "-36.7631",
+          "longitude": "-110.6801"
+        },
+        "timezone": {
+          "offset": "+10:00",
+          "description": "Eastern Australia, Guam, Vladivostok"
+        }
+      },
+      "email": "andres.arias@example.com",
+      "login": {
+        "uuid": "10fefd54-06f7-4561-8d4e-7b34d001c7ad",
+        "username": "crazysnake105",
+        "password": "S3crM",
+        "salt": "cA0EwzgX",
+        "md5": "e394544e21f9517915d6602d69d1c779",
+        "sha1": "cde5ae0e99d21be42faa7900f17c96ab99f2aca5",
+        "sha256": "4e8d1227d2a6c0229d2f59f8538c613d5e506ff5d3756ec477e92fc791307374"
+      },
+      "dob": {
+        "date": "1946-12-07T00:51:03.264Z",
+        "age": 78
+      },
+      "registered": {
+        "date": "2003-12-04T22:23:08.217Z",
+        "age": 21
+      },
+      "phone": "946-844-061",
+      "cell": "619-112-757",
+      "id": {
+        "name": "DNI",
+        "value": "23579957-K"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/80.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/80.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/80.jpg"
+      },
+      "nat": "ES"
+    }
+  ],
+  "info": {
+    "seed": "45471934d5523426",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+```
+---
