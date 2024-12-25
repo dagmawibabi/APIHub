@@ -1,0 +1,43 @@
+## 🖥 apicagent API
+
+The apicagent API allows you to send your user-agent string and get a response with the corresponding data.
+
+---
+
+## Get User-Agent Information (GET)
+
+Fetches information about the provided user-agent string via a GET request.
+
+- **URL**: `/user-agent`
+- **Method**: GET
+- **Headers**:
+  - `User-Agent` (required): The User-Agent string sent by the client.
+- **Response**: Returns a JSON object containing information about the user-agent.
+
+**Example Request:**
+
+```plaintext
+GET /user-agent
+
+```json
+{
+  "browser_family": "Chrome",
+  "client": {
+    "engine": "Blink",
+    "engine_version": "unknown",
+    "name": "Chrome",
+    "type": "browser",
+    "version": "89.0.4389.114"
+  },
+  "device": {
+    "brand": "Apple",
+    "model": "unknown",
+    "type": "desktop"
+  },
+  "os": {
+    "name": "Mac",
+    "platform": "unknown",
+    "version": "10.15.5"
+  },
+  "os_family": "Mac"
+}
